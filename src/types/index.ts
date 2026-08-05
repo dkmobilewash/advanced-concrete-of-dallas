@@ -23,36 +23,38 @@ export interface Service {
   relatedServices: string[]
 }
 
-export interface Testimonial {
+export interface ServiceArea {
   name: string
-  area: string
-  quote: string
-  rating: number
+  slug: string
+  tagline: string
+  intro: string
+  why: string
+  topServices: string[]
+  localNotes: string
+  closingLine: string
 }
 
-export interface Location {
-  area: string
+export type BlogSection =
+  | { type: 'h2'; text: string }
+  | { type: 'h3'; text: string }
+  | { type: 'p'; text: string }
+  | { type: 'ul'; items: string[] }
+  | { type: 'ol'; items: string[] }
+  | { type: 'callout'; text: string }
+
+export interface BlogPost {
   slug: string
-  metaTitle: string
-  metaDescription: string
-  heroSubtitle: string
-  intro: string[]
-  landmarks: string[]
-  nearbyAreas: string[]
-  testimonial: Testimonial
+  title: string
+  excerpt: string
+  date: string
+  tag: string
+  readTime: string
+  content: BlogSection[]
 }
 
 export interface GalleryImage {
   id: number
   src: string
   alt: string
-  category: GalleryCategory
+  category: string
 }
-
-export type GalleryCategory =
-  | 'Driveways'
-  | 'Patios'
-  | 'Pool Decks'
-  | 'Block Walls'
-  | 'Foundations'
-  | 'Commercial'

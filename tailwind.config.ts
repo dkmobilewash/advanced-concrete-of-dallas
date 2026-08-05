@@ -1,39 +1,44 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '24px',
+    },
     extend: {
       colors: {
-        primary: '#1C3557',
-        accent: '#E8710A',
-        'accent-dark': '#C85E08',
-        dark: '#111827',
-        mid: '#4B5563',
-        light: '#F3F4F6',
-        border: '#E5E7EB',
+        navy: '#1B2B3A',
+        'navy-dark': '#111D27',
+        gold: '#B8863B',
+        'gold-lt': '#D4A45A',
+        cream: '#F5F0E8',
+        charcoal: '#2C2C2C',
+        mid: '#5A5A5A',
+        rule: '#D9D0C0',
+        'section-alt': '#EDE8DF',
       },
       fontFamily: {
-        display: ['var(--font-oswald)'],
-        body: ['var(--font-inter)'],
+        heading: ['Oswald', 'Arial Narrow', 'sans-serif'],
+        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+        body: ['Lato', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        container: '1160px',
       },
       keyframes: {
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        bounceChevron: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(8px)' },
-        },
       },
       animation: {
-        fadeUp: 'fadeUp 0.6s ease-out forwards',
-        bounceChevron: 'bounceChevron 2s ease-in-out infinite',
+        fadeUp: 'fadeUp 0.5s ease-out forwards',
+      },
+      spacing: {
+        header: '72px',
+        'header-mobile': '60px',
       },
     },
   },

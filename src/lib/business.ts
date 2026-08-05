@@ -1,0 +1,15 @@
+export const BUSINESS = {
+  name: 'Advanced Concrete of Dallas',
+  shortName: 'Advanced Concrete',
+  tagline: 'Dallas-Fort Worth’s Trusted Concrete Contractor',
+  city: 'Dallas',
+  state: 'TX',
+  phone: '(214) 555-0142',
+  phoneHref: 'tel:+12145550142',
+  email: 'info@advancedconcreteofdallas.com',
+  hours: 'Mon–Sat 7am–6pm',
+  addressLine: 'Dallas, TX',
+  license: 'Licensed & Insured General Contractor — TX',
+  siteUrl: 'https://advancedconcreteofdallas.com',
+  founded: 2009,
+} as const

@@ -1,24 +1,24 @@
-import { Service } from '@/types'
+import type { Service } from '@/types'
 
 export const services: Service[] = [
   {
     slug: 'driveways',
     name: 'Driveways',
     shortDescription:
-      'Reinforced concrete driveways built to handle Texas heat and North Texas clay soil, with decorative finish options.',
-    metaTitle: 'Concrete Driveway Installation in Plano, TX',
+      'Reinforced concrete driveways built to handle Dallas heat and North Texas clay soil, with decorative finish options.',
+    metaTitle: 'Concrete Driveway Installation in Dallas, TX',
     metaDescription:
-      'Durable, code-compliant concrete driveways in Plano, TX. Broom finish, exposed aggregate, and stamped options. Free estimates — call (214) 751-8014.',
-    heroImage: 'https://picsum.photos/seed/pcs-driveway-hero/1600/900',
-    heroSubtitle: 'Reinforced concrete driveways built for Texas heat and clay soil movement.',
+      'Durable, code-compliant concrete driveways in Dallas, TX. Broom finish, exposed aggregate, and stamped options. Free estimates — call (214) 555-0142.',
+    heroImage: 'https://picsum.photos/seed/acd-driveway-hero/1600/900',
+    heroSubtitle: 'Reinforced concrete driveways built for Dallas heat and clay soil movement.',
     intro: [
-      "A driveway in Plano takes a beating that most homeowners never think about until it cracks. Summer temperatures routinely climb past 100°F, and the expansive clay soil underneath North Texas neighborhoods swells and shrinks with every rain cycle. A driveway that isn't poured to the right thickness, with the right reinforcement, is a driveway that will crack within a few years.",
+      "A driveway in Dallas takes a beating most homeowners never think about until it cracks. Summer temperatures routinely climb past 100°F, and the expansive clay soil underneath North Texas neighborhoods swells and shrinks with every rain cycle. A driveway that isn't poured to the right thickness, with the right reinforcement, is a driveway that will crack within a few years.",
       "We pour every driveway at a minimum of 4 inches thick over properly compacted base, with rebar or wire mesh reinforcement sized to the site conditions. Control joints are placed to manage cracking before it starts, and we grade every pour for proper drainage away from the garage and foundation.",
-      "Plano homeowners also have finish options to consider — broom finish for a classic, slip-resistant surface, exposed aggregate for texture and curb appeal, or stamped concrete for a decorative look. Many Plano HOAs have specific requirements on driveway finish and color, and we work directly with homeowners to make sure the finished product meets those standards before we ever pour.",
+      "Dallas homeowners also have finish options to consider — broom finish for a classic, slip-resistant surface, exposed aggregate for texture and curb appeal, or stamped concrete for a decorative look. Many Dallas HOAs, from Lakewood to Preston Hollow, have specific requirements on driveway finish and color, and we work directly with homeowners to make sure the finished product meets those standards before we ever pour.",
     ],
     benefits: [
       'Improved curb appeal and higher home resale value',
-      'Built to withstand Texas heat and freeze-thaw cycles',
+      'Built to withstand Dallas heat and freeze-thaw cycles',
       'Low maintenance compared to asphalt or pavers',
       'Custom finish options: broom, exposed aggregate, or stamped',
       'Proper reinforcement for North Texas clay soil movement',
@@ -75,13 +75,13 @@ export const services: Service[] = [
     name: 'Patios',
     shortDescription:
       'Custom concrete patios designed for outdoor living, with stamped, stained, and cool-surface finish options.',
-    metaTitle: 'Concrete Patio Installation in Plano, TX',
+    metaTitle: 'Concrete Patio Installation in Dallas, TX',
     metaDescription:
-      'Custom concrete patios built for Plano backyards. Stamped, stained, and cool deck finishes available. Free estimates — call (214) 751-8014.',
-    heroImage: 'https://picsum.photos/seed/pcs-patio-hero/1600/900',
-    heroSubtitle: 'Custom patios built for the way Plano families actually use their backyards.',
+      'Custom concrete patios built for Dallas backyards. Stamped, stained, and cool deck finishes available. Free estimates — call (214) 555-0142.',
+    heroImage: 'https://picsum.photos/seed/acd-patio-hero/1600/900',
+    heroSubtitle: 'Custom patios built for the way Dallas families actually use their backyards.',
     intro: [
-      "Outdoor living isn't a trend in Plano — it's a way of life. With long, warm seasons that stretch from March through October, your patio gets real, regular use for grilling, entertaining, and just getting outside after the sun goes down. A patio built to last needs to hold up to foot traffic, furniture, and the occasional pool splash without cracking or discoloring.",
+      "Outdoor living isn't a trend in Dallas — it's a way of life. With long, warm seasons that stretch from March through October, your patio gets real, regular use for grilling, entertaining, and just getting outside after the sun goes down. A patio built to last needs to hold up to foot traffic, furniture, and the occasional pool splash without cracking or discoloring.",
       "We pour patios in plain broom finish for a clean, understated look, or stamped concrete that mimics flagstone, brick, or natural stone at a fraction of the cost and maintenance. Unlike pavers, a properly poured concrete patio has no joints for weeds to grow through and no stones to shift over time. Unlike wood decking, it won't rot, warp, or need annual refinishing.",
       "For homeowners near a pool, we also offer cool deck finishes that stay noticeably cooler underfoot during a Texas summer afternoon. Every patio is sloped correctly for drainage and finished with a sealer that protects against sun fade, chlorine, and staining.",
     ],
@@ -146,13 +146,13 @@ export const services: Service[] = [
     name: 'Pool Decks',
     shortDescription:
       'Slip-resistant, heat-reflective pool deck surfaces designed to stay cool underfoot through Texas summers.',
-    metaTitle: 'Pool Deck Resurfacing & Installation in Plano, TX',
+    metaTitle: 'Pool Deck Resurfacing & Installation in Dallas, TX',
     metaDescription:
-      'Cool deck and textured concrete pool decks in Plano, TX — slip-resistant and built to stay cool in Texas heat. Free estimates — call (214) 751-8014.',
-    heroImage: 'https://picsum.photos/seed/pcs-pooldeck-hero/1600/900',
+      'Cool deck and textured concrete pool decks in Dallas, TX — slip-resistant and built to stay cool in Texas heat. Free estimates — call (214) 555-0142.',
+    heroImage: 'https://picsum.photos/seed/acd-pooldeck-hero/1600/900',
     heroSubtitle: 'Slip-resistant, heat-reflective surfaces built for Texas pool season.',
     intro: [
-      "Plano homeowners rely on their pools from April through October, and the deck around it matters just as much as the pool itself. A surface that gets too hot to stand on, or too slick when wet, turns a great backyard feature into a liability. We build and resurface pool decks specifically for how they'll actually be used in North Texas heat.",
+      "Dallas homeowners rely on their pools from April through October, and the deck around it matters just as much as the pool itself. A surface that gets too hot to stand on, or too slick when wet, turns a great backyard feature into a liability. We build and resurface pool decks specifically for how they'll actually be used in North Texas heat.",
       "Our cool deck coatings and textured concrete finishes are formulated to reflect heat rather than absorb it, so the surface stays noticeably cooler on a 100°F afternoon than plain gray concrete. We also broom or texture every deck surface for slip resistance around wet feet, and use materials that hold up to chlorine and pool chemicals without discoloring.",
       "If your existing deck is cracked, faded, or just outdated, we can often resurface over the existing slab rather than a full tear-out, saving time and cost while giving you a fresh, updated look.",
     ],
@@ -206,19 +206,19 @@ export const services: Service[] = [
     relatedServices: ['patios', 'commercial-concrete'],
   },
   {
-    slug: 'block-walls',
-    name: 'Block Walls',
+    slug: 'retaining-walls',
+    name: 'Retaining & Block Walls',
     shortDescription:
       'CMU retaining and privacy walls built to handle sloped lots and add lasting structure to your property.',
-    metaTitle: 'Block Wall & Retaining Wall Construction in Plano, TX',
+    metaTitle: 'Retaining Wall & Block Wall Construction in Dallas, TX',
     metaDescription:
-      'Retaining walls, privacy walls, and CMU block construction in Plano, TX. Built for sloped lots and long-term durability. Call (214) 751-8014.',
-    heroImage: 'https://picsum.photos/seed/pcs-blockwall-hero/1600/900',
-    heroSubtitle: 'Retaining and privacy walls built to handle sloped Plano lots.',
+      'Retaining walls, privacy walls, and CMU block construction in Dallas, TX. Built for sloped lots and long-term durability. Call (214) 555-0142.',
+    heroImage: 'https://picsum.photos/seed/acd-blockwall-hero/1600/900',
+    heroSubtitle: 'Retaining and privacy walls built to handle sloped Dallas lots.',
     intro: [
-      "Retaining walls, privacy walls, and garden borders show up across both older and newer Plano neighborhoods — anywhere a lot has grade change, a need for separation from a neighbor, or a spot that erodes after heavy rain. Done right, a CMU block wall solves all three at once and lasts for decades.",
+      "Retaining walls, privacy walls, and garden borders show up across both older and newer Dallas neighborhoods — anywhere a lot has grade change, a need for separation from a neighbor, or a spot that erodes after heavy rain. Done right, a CMU block wall solves all three at once and lasts for decades.",
       "We build block walls with proper engineering for the wall height and soil load involved, correct footing depth, and drainage behind the wall so water pressure doesn't build up and push it out of alignment over time. That last part is where a lot of DIY and lower-quality retaining walls fail in North Texas clay soil.",
-      "Whether you need a low garden wall, a full retaining wall on a sloped backyard, or a privacy wall along a property line, we handle the design, any required permitting, and the full construction from footing to cap.",
+      "Whether you need a low garden wall, a full retaining wall on a sloped backyard near White Rock Lake, or a privacy wall along a property line, we handle the design, any required permitting, and the full construction from footing to cap.",
     ],
     benefits: [
       'Retains soil and prevents erosion on sloped lots',
@@ -230,7 +230,7 @@ export const services: Service[] = [
     processSteps: [
       {
         title: 'Engineering / Permits',
-        description: 'We assess wall height, soil load, and drainage needs, and handle permitting where required by the City of Plano.',
+        description: 'We assess wall height, soil load, and drainage needs, and handle permitting where required by the City of Dallas.',
       },
       {
         title: 'Excavation & Footing',
@@ -251,9 +251,9 @@ export const services: Service[] = [
     ],
     faq: [
       {
-        question: 'Do I need a permit for a block wall in Plano?',
+        question: 'Do I need a permit for a block wall in Dallas?',
         answer:
-          'Walls above a certain height typically require a permit from the City of Plano. We handle that process for you as part of the project scope.',
+          'Walls above a certain height typically require a permit from the City of Dallas. We handle that process for you as part of the project scope.',
       },
       {
         question: 'How tall can a retaining wall be without engineering review?',
@@ -278,15 +278,15 @@ export const services: Service[] = [
     name: 'Foundations & Slabs',
     shortDescription:
       'Engineered foundations and slabs designed to handle North Texas clay soil movement.',
-    metaTitle: 'Foundation & Slab Contractors in Plano, TX',
+    metaTitle: 'Foundation & Slab Contractors in Dallas, TX',
     metaDescription:
-      'Post-tension and conventional concrete foundations and slabs in Plano, TX, engineered for North Texas clay soil. Call (214) 751-8014 for a quote.',
-    heroImage: 'https://picsum.photos/seed/pcs-foundation-hero/1600/900',
+      'Post-tension and conventional concrete foundations and slabs in Dallas, TX, engineered for North Texas clay soil. Call (214) 555-0142 for a quote.',
+    heroImage: 'https://picsum.photos/seed/acd-foundation-hero/1600/900',
     heroSubtitle: 'Engineered slabs built to handle North Texas clay soil movement.',
     intro: [
-      "North Texas clay soil expands when it's wet and contracts when it dries out, and it does this every year, in every season. A foundation that isn't engineered for that movement will eventually crack, and once a slab cracks, the fix only gets more expensive over time. This is the single biggest factor we design around on every foundation and slab project in Plano.",
+      "North Texas clay soil expands when it's wet and contracts when it dries out, and it does this every year, in every season. A foundation that isn't engineered for that movement will eventually crack, and once a slab cracks, the fix only gets more expensive over time. This is the single biggest factor we design around on every foundation and slab project in Dallas.",
       "We pour both post-tension slabs, which use steel cables tensioned inside the concrete to resist cracking as the ground shifts beneath it, and conventional rebar-reinforced slabs, depending on what the engineering calls for and what the project needs. This includes new home foundations, room additions, detached garages, and shop or workshop floors.",
-      "Every foundation project starts with proper site evaluation and grading, includes correctly placed drainage to move water away from the slab, and is built to current Plano and North Texas building code.",
+      "Every foundation project starts with proper site evaluation and grading, includes correctly placed drainage to move water away from the slab, and is built to current City of Dallas and North Texas building code.",
     ],
     benefits: [
       'Engineered specifically for North Texas clay soil',
@@ -338,9 +338,9 @@ export const services: Service[] = [
           'Standard garage slabs are typically 4–5 inches, though heavier vehicles or workshop use may call for additional thickness or reinforcement.',
       },
       {
-        question: 'Do foundation projects require permits in Plano?',
+        question: 'Do foundation projects require permits in Dallas?',
         answer:
-          'Yes, new foundations, additions, and detached structures generally require permitting through the City of Plano. We handle that process as part of your project.',
+          'Yes, new foundations, additions, and detached structures generally require permitting through the City of Dallas. We handle that process as part of your project.',
       },
     ],
     relatedServices: ['driveways', 'commercial-concrete'],
@@ -349,14 +349,14 @@ export const services: Service[] = [
     slug: 'commercial-concrete',
     name: 'Commercial Concrete',
     shortDescription:
-      'Parking lots, sidewalks, and warehouse floors for Plano businesses, with scheduling built around minimizing downtime.',
-    metaTitle: 'Commercial Concrete Contractor in Plano, TX',
+      'Parking lots, sidewalks, and warehouse floors for Dallas businesses, with scheduling built around minimizing downtime.',
+    metaTitle: 'Commercial Concrete Contractor in Dallas, TX',
     metaDescription:
-      'Commercial concrete services in Plano, TX — parking lots, sidewalks, ADA hardscaping, and warehouse floors. Bonded & insured. Call (214) 751-8014.',
-    heroImage: 'https://picsum.photos/seed/pcs-commercial-hero/1600/900',
-    heroSubtitle: 'Parking lots, sidewalks, and warehouse floors for growing Plano businesses.',
+      'Commercial concrete services in Dallas, TX — parking lots, sidewalks, ADA hardscaping, and warehouse floors. Bonded & insured. Call (214) 555-0142.',
+    heroImage: 'https://picsum.photos/seed/acd-commercial-hero/1600/900',
+    heroSubtitle: 'Parking lots, sidewalks, and warehouse floors for growing Dallas businesses.',
     intro: [
-      "Plano is home to dozens of corporate campuses, retail centers, and growing business parks, especially along the Highway 121 and Legacy West corridors. That growth means steady demand for commercial concrete work that meets code, holds up to heavy daily use, and gets done on a schedule that doesn't interrupt business operations.",
+      "Dallas is home to a growing number of corporate campuses, retail centers, and mixed-use developments, from Uptown high-rises to warehouse and distribution space along the I-35 and I-30 corridors. That growth means steady demand for commercial concrete work that meets code, holds up to heavy daily use, and gets done on a schedule that doesn't interrupt business operations.",
       "We handle commercial concrete projects of all sizes — parking lots, loading areas, sidewalks, ADA-compliant ramps and hardscaping, and interior warehouse or industrial floors. Every project is bonded and insured, and we bring the crew capacity to keep larger pours moving on schedule.",
       "Because commercial projects often need to happen around business hours, we work with property managers and business owners to plan phased pours, off-hours work, and scheduling that keeps disruption to a minimum.",
     ],
@@ -403,7 +403,7 @@ export const services: Service[] = [
       {
         question: 'Do you handle permitting for commercial projects?',
         answer:
-          'Yes, we manage permitting with the City of Plano as part of the project scope on commercial work.',
+          'Yes, we manage permitting with the City of Dallas as part of the project scope on commercial work.',
       },
       {
         question: 'How long does a large commercial pour take?',
