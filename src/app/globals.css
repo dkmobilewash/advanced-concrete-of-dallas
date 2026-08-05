@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1c3557;
+  --color-accent: #e8710a;
+  --color-dark: #111827;
+  --color-mid: #4b5563;
+  --color-light: #f3f4f6;
+  --color-white: #ffffff;
+  --color-border: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-dark;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.prose-plano {
+  @apply max-w-3xl mx-auto text-mid leading-relaxed;
+}
+
+.prose-plano h2 {
+  @apply mt-10 mb-4 text-2xl font-semibold text-dark;
+}
+
+.prose-plano p {
+  @apply mb-4;
+}
+
+.prose-plano ul {
+  @apply mb-4 ml-6 list-disc space-y-2;
+}
+
+details.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-chevron {
+  transition: transform 0.2s ease-in-out;
+}
+
+.faq-answer {
+  animation: fadeUp 0.3s ease-out;
+}
