@@ -5,7 +5,7 @@ import ServiceCard from '@/components/ServiceCard'
 import CtaSection from '@/components/CtaSection'
 import { MapPin } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
-import { getServiceBySlug } from '@/data/services'
+import { services } from '@/data/services'
 import { BUSINESS } from '@/lib/business'
 import type { ServiceArea } from '@/types'
 
@@ -15,7 +15,6 @@ interface ServiceAreaPageProps {
 
 export default function ServiceAreaPage({ area }: ServiceAreaPageProps) {
   const fadeRef = useFadeUp<HTMLDivElement>()
-  const topServices = area.topServices.map((slug) => getServiceBySlug(slug)).filter((s) => s !== undefined)
 
   const schema = {
     '@context': 'https://schema.org',
@@ -52,11 +51,20 @@ export default function ServiceAreaPage({ area }: ServiceAreaPageProps) {
       <section className="section bg-section-alt">
         <div className="container-acd">
           <div className="fade-up">
-            <SectionEyebrow eyebrow="Our Work" heading={`Concrete Services We Offer in ${area.name}`} />
+            <SectionEyebrow
+              eyebrow="Our Work"
+              heading={`Services Offered in ${area.name}`}
+              subtitle={`Every concrete service we offer, with details specific to ${area.name}.`}
+            />
           </div>
           <div className="grid grid-cols-1 gap-6 fade-up sm:grid-cols-2 lg:grid-cols-3">
-            {topServices.map((service) => (
-              <ServiceCard key={service.slug} title={service.name} description={service.shortDescription} href={`/${service.slug}`} />
+            {services.map((service) => (
+              <ServiceCard
+                key={service.slug}
+                title={service.name}
+                description={service.shortDescription}
+                href={`/${service.slug}/${area.slug}`}
+              />
             ))}
           </div>
         </div>

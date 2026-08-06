@@ -2,6 +2,18 @@ import type { ServiceArea } from '@/types'
 
 export const serviceAreas: ServiceArea[] = [
   {
+    name: 'Dallas',
+    slug: 'dallas',
+    tagline: 'Concrete driveways, patios, and commercial work across greater Dallas.',
+    intro:
+      "Dallas is a big, varied city — dense urban cores like Uptown and Downtown, historic neighborhoods like Lakewood and Oak Cliff, affluent enclaves like Highland Park and Preston Hollow, and everything in between. Wherever you are in the metro, the concrete work has to answer to the same two things: North Texas clay soil and a long, hard summer.",
+    why:
+      'We built Advanced Concrete of Dallas to work across the whole city, not just one corner of it. Every crew is trained on the same site prep, reinforcement, and finish standards no matter which neighborhood the job is in, so you get the same quality whether you’re off the Tollway, near White Rock Lake, or south of the river.',
+    topServices: ['driveways', 'patios', 'commercial-concrete'],
+    localNotes: 'Serving neighborhoods across Dallas, from Uptown and Downtown to Oak Cliff and Lake Highlands, along the I-35E, US-75, I-30, and I-635 corridors.',
+    closingLine: 'One standard of work, delivered the same way in every Dallas neighborhood we serve.',
+  },
+  {
     name: 'Uptown Dallas',
     slug: 'uptown-dallas',
     tagline: 'Commercial concrete and hardscaping for Dallas’s densest urban core.',

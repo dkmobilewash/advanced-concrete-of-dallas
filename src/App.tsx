@@ -17,6 +17,7 @@ const Contact = lazy(() => import('@/pages/Contact'))
 const BlogIndex = lazy(() => import('@/pages/BlogIndex'))
 const BlogPost = lazy(() => import('@/pages/BlogPost'))
 const ServiceAreasIndex = lazy(() => import('@/pages/ServiceAreasIndex'))
+const Dallas = lazy(() => import('@/pages/service-areas/Dallas'))
 const UptownDallas = lazy(() => import('@/pages/service-areas/UptownDallas'))
 const HighlandPark = lazy(() => import('@/pages/service-areas/HighlandPark'))
 const UniversityPark = lazy(() => import('@/pages/service-areas/UniversityPark'))
@@ -26,6 +27,7 @@ const OakLawn = lazy(() => import('@/pages/service-areas/OakLawn'))
 const LakeHighlands = lazy(() => import('@/pages/service-areas/LakeHighlands'))
 const OakCliff = lazy(() => import('@/pages/service-areas/OakCliff'))
 const BishopArtsDistrict = lazy(() => import('@/pages/service-areas/BishopArtsDistrict'))
+const ServiceLocationPage = lazy(() => import('@/pages/ServiceLocationPage'))
 
 export default function App() {
   return (
@@ -51,6 +53,7 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
 
             <Route path="/service-areas" element={<ServiceAreasIndex />} />
+            <Route path="/service-areas/dallas" element={<Dallas />} />
             <Route path="/service-areas/uptown-dallas" element={<UptownDallas />} />
             <Route path="/service-areas/highland-park" element={<HighlandPark />} />
             <Route path="/service-areas/university-park" element={<UniversityPark />} />
@@ -60,6 +63,8 @@ export default function App() {
             <Route path="/service-areas/lake-highlands" element={<LakeHighlands />} />
             <Route path="/service-areas/oak-cliff" element={<OakCliff />} />
             <Route path="/service-areas/bishop-arts-district" element={<BishopArtsDistrict />} />
+
+            <Route path="/:serviceSlug/:locationSlug" element={<ServiceLocationPage />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>

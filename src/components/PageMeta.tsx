@@ -6,7 +6,7 @@ interface PageMetaProps {
   description: string
   canonicalPath: string
   ogImage?: string
-  schema?: Record<string, unknown>
+  schema?: Record<string, unknown> | Record<string, unknown>[]
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -37,17 +37,21 @@ export default function PageMeta({ title, description, canonicalPath, ogImage, s
     }
     canonicalEl.setAttribute('href', `${BUSINESS.siteUrl}${canonicalPath}`)
 
-    let schemaEl: HTMLScriptElement | null = null
+    const schemaEls: HTMLScriptElement[] = []
     if (schema) {
-      schemaEl = document.createElement('script')
-      schemaEl.type = 'application/ld+json'
-      schemaEl.text = JSON.stringify(schema)
-      schemaEl.dataset.pageSchema = 'true'
-      document.head.appendChild(schemaEl)
+      const schemas = Array.isArray(schema) ? schema : [schema]
+      for (const s of schemas) {
+        const el = document.createElement('script')
+        el.type = 'application/ld+json'
+        el.text = JSON.stringify(s)
+        el.dataset.pageSchema = 'true'
+        document.head.appendChild(el)
+        schemaEls.push(el)
+      }
     }
 
     return () => {
-      if (schemaEl) schemaEl.remove()
+      schemaEls.forEach((el) => el.remove())
     }
   }, [title, description, canonicalPath, ogImage, schema])
 

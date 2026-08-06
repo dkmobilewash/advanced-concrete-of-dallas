@@ -6,9 +6,10 @@ import ProcessSteps from '@/components/ProcessSteps'
 import FaqAccordion from '@/components/FaqAccordion'
 import YouMayAlsoNeed from '@/components/YouMayAlsoNeed'
 import CtaSection from '@/components/CtaSection'
-import { CheckCircle, Phone } from '@/components/icons'
+import { CheckCircle, MapPin, Phone } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { getServiceBySlug } from '@/data/services'
+import { serviceAreas } from '@/data/serviceAreas'
 import { BUSINESS } from '@/lib/business'
 
 interface ServiceDetailPageProps {
@@ -112,6 +113,30 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
           </div>
           <div className="fade-up">
             <FaqAccordion items={service.faq} />
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="container-acd">
+          <div className="fade-up">
+            <SectionEyebrow
+              eyebrow="Where We Work"
+              heading={`Where We Offer ${service.name}`}
+              subtitle={`${service.name} in every Dallas neighborhood we serve — pick your area for local details.`}
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-3 fade-up sm:grid-cols-2 lg:grid-cols-3">
+            {serviceAreas.map((area) => (
+              <Link
+                key={area.slug}
+                to={`/${service.slug}/${area.slug}`}
+                className="flex items-center gap-2 border border-rule bg-white px-4 py-3 font-heading text-sm font-semibold text-navy transition-colors hover:border-gold hover:bg-cream hover:text-gold"
+              >
+                <MapPin className="h-4 w-4 shrink-0 text-gold" />
+                {service.name} in {area.name}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
