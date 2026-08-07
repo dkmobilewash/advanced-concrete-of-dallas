@@ -12,7 +12,7 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
     >
       {steps.map((step, i) => (
         <div key={step.title} className="border border-rule bg-white p-6">
-          <span className="font-heading text-4xl font-bold text-gold/20">
+          <span className="font-heading text-4xl font-bold text-silver/20">
             {String(i + 1).padStart(2, '0')}
           </span>
           <h3 className="mt-3 text-navy">{step.title}</h3>

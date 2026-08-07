@@ -102,7 +102,7 @@ export default function ServiceLocationPage() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-4 fade-up sm:grid-cols-2">
             {service.benefits.map((benefit) => (
               <div key={benefit} className="flex items-start gap-3">
-                <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-silver" />
                 <span className="font-body text-base text-mid">{benefit}</span>
               </div>
             ))}
@@ -126,9 +126,9 @@ export default function ServiceLocationPage() {
           <div className="fade-up">
             <SectionEyebrow eyebrow="Local Notes" heading={`${service.name} Work in ${area.name}`} />
           </div>
-          <div className="fade-up border-l-4 border-gold bg-white p-6">
+          <div className="fade-up border-l-4 border-silver bg-white p-6">
             <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-gold" />
+              <MapPin className="h-5 w-5 text-silver" />
               <h3 className="text-navy">Local to {area.name}</h3>
             </div>
             <p className="mt-3 font-body text-sm leading-relaxed text-mid">{area.localNotes}</p>
@@ -156,7 +156,7 @@ export default function ServiceLocationPage() {
                 <Link
                   key={s.slug}
                   to={`/${s.slug}/${area.slug}`}
-                  className="border border-rule bg-white px-4 py-2.5 font-heading text-sm font-semibold text-navy transition-colors hover:border-gold hover:text-gold"
+                  className="border border-rule bg-white px-4 py-2.5 font-heading text-sm font-semibold text-navy transition-colors hover:border-silver hover:text-silver"
                 >
                   {s.name}
                 </Link>
@@ -171,7 +171,7 @@ export default function ServiceLocationPage() {
                 <Link
                   key={a.slug}
                   to={`/${service.slug}/${a.slug}`}
-                  className="border border-rule bg-white px-4 py-2.5 font-heading text-sm font-semibold text-navy transition-colors hover:border-gold hover:text-gold"
+                  className="border border-rule bg-white px-4 py-2.5 font-heading text-sm font-semibold text-navy transition-colors hover:border-silver hover:text-silver"
                 >
                   {a.name}
                 </Link>

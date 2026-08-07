@@ -29,14 +29,14 @@ export default function ServiceAreasIndex() {
             <Link
               key={area.slug}
               to={`/service-areas/${area.slug}`}
-              className="group block border-t-4 border-gold bg-white p-6 shadow-sm transition-colors hover:bg-cream"
+              className="group block border-t-4 border-silver bg-white p-6 shadow-sm transition-colors hover:bg-cream"
             >
-              <div className="flex items-center gap-2 text-gold">
+              <div className="flex items-center gap-2 text-silver">
                 <MapPin className="h-5 w-5" />
                 <h3 className="text-navy">{area.name}</h3>
               </div>
               <p className="mt-2 font-body text-sm leading-relaxed text-mid">{area.tagline}</p>
-              <span className="mt-4 inline-block font-heading text-sm font-semibold uppercase tracking-wide text-gold group-hover:text-gold-lt">
+              <span className="mt-4 inline-block font-heading text-sm font-semibold uppercase tracking-wide text-silver group-hover:text-silver-lt">
                 View Area &rarr;
               </span>
             </Link>

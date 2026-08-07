@@ -22,7 +22,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                 {isLast || !item.href ? (
                   <span className="text-charcoal">{item.label}</span>
                 ) : (
-                  <Link to={item.href} className="text-gold hover:text-gold-lt hover:underline">
+                  <Link to={item.href} className="text-silver hover:text-silver-lt hover:underline">
                     {item.label}
                   </Link>
                 )}

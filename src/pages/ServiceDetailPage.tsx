@@ -87,7 +87,7 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
           <div className="grid grid-cols-1 gap-x-8 gap-y-4 fade-up sm:grid-cols-2">
             {service.benefits.map((benefit) => (
               <div key={benefit} className="flex items-start gap-3">
-                <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-silver" />
                 <span className="font-body text-base text-mid">{benefit}</span>
               </div>
             ))}
@@ -131,9 +131,9 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
               <Link
                 key={area.slug}
                 to={`/${service.slug}/${area.slug}`}
-                className="flex items-center gap-2 border border-rule bg-white px-4 py-3 font-heading text-sm font-semibold text-navy transition-colors hover:border-gold hover:bg-cream hover:text-gold"
+                className="flex items-center gap-2 border border-rule bg-white px-4 py-3 font-heading text-sm font-semibold text-navy transition-colors hover:border-silver hover:bg-cream hover:text-silver"
               >
-                <MapPin className="h-4 w-4 shrink-0 text-gold" />
+                <MapPin className="h-4 w-4 shrink-0 text-silver" />
                 {service.name} in {area.name}
               </Link>
             ))}

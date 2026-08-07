@@ -55,8 +55,8 @@ export default function Gallery() {
                 onClick={() => setActive(cat)}
                 className={`border px-5 py-2.5 font-heading text-sm font-semibold uppercase tracking-wide transition-colors ${
                   active === cat
-                    ? 'border-gold bg-gold text-navy'
-                    : 'border-rule bg-white text-mid hover:border-gold hover:text-gold'
+                    ? 'border-silver bg-silver text-navy'
+                    : 'border-rule bg-white text-mid hover:border-silver hover:text-silver'
                 }`}
               >
                 {cat}

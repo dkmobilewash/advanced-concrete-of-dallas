@@ -50,7 +50,7 @@ export default function About() {
           </div>
           <div className="fade-up flex items-center justify-center border border-rule bg-cream p-10 text-center">
             <div>
-              <p className="font-heading text-5xl font-bold text-gold">{new Date().getFullYear() - BUSINESS.founded}+</p>
+              <p className="font-heading text-5xl font-bold text-silver">{new Date().getFullYear() - BUSINESS.founded}+</p>
               <p className="mt-2 font-heading text-sm uppercase tracking-wide text-navy">Years Serving Dallas</p>
             </div>
           </div>
@@ -65,8 +65,8 @@ export default function About() {
           <div className="grid grid-cols-2 gap-8 fade-up lg:grid-cols-4">
             {values.map((v) => (
               <div key={v.label} className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
-                  <v.icon className="h-8 w-8 text-gold" />
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-silver/10">
+                  <v.icon className="h-8 w-8 text-silver" />
                 </div>
                 <h3 className="mt-4 text-navy">{v.label}</h3>
                 <p className="mt-2 font-body text-sm leading-relaxed text-mid">{v.description}</p>

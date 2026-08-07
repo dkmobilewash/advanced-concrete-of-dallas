@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --color-navy: #1b2b3a;
-  --color-navy-dark: #111d27;
-  --color-gold: #b8863b;
-  --color-gold-lt: #d4a45a;
-  --color-cream: #f5f0e8;
+  --color-navy: #16233f;
+  --color-navy-dark: #0e1826;
+  --color-silver: #7e8998;
+  --color-silver-lt: #a6afbc;
+  --color-cream: #f1f3f6;
   --color-white: #ffffff;
   --color-charcoal: #2c2c2c;
-  --color-mid: #5a5a5a;
-  --color-rule: #d9d0c0;
-  --color-section-alt: #ede8df;
+  --color-mid: #5c6672;
+  --color-rule: #d6dce2;
+  --color-section-alt: #e6eaee;
 
   --font-heading: 'Oswald', Arial Narrow, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
@@ -83,7 +83,7 @@ a {
 }
 
 *:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-silver);
   outline-offset: 2px;
 }
 
@@ -129,12 +129,12 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--color-gold);
+  background-color: var(--color-silver);
   color: var(--color-navy);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold-lt);
+  background-color: var(--color-silver-lt);
 }
 
 .btn-secondary {

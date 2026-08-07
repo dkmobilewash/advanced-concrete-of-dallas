@@ -29,7 +29,7 @@ export default function FaqAccordion({ items, variant = 'light' }: FaqAccordionP
               <motion.span
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
-                className={`shrink-0 ${isDark ? 'text-gold-lt' : 'text-gold'}`}
+                className={`shrink-0 ${isDark ? 'text-silver-lt' : 'text-silver'}`}
               >
                 <Plus className="h-5 w-5" />
               </motion.span>

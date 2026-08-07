@@ -33,7 +33,7 @@ function Section({ section }: { section: BlogSection }) {
       )
     case 'callout':
       return (
-        <div className="my-6 border-l-4 border-gold bg-cream p-5 font-body text-base leading-relaxed text-charcoal">
+        <div className="my-6 border-l-4 border-silver bg-cream p-5 font-body text-base leading-relaxed text-charcoal">
           {section.text}
         </div>
       )

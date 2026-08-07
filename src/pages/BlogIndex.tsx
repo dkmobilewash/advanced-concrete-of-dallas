@@ -24,13 +24,13 @@ export default function BlogIndex() {
       <section className="section bg-white">
         <div className="container-acd grid grid-cols-1 gap-8 fade-up sm:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <Link key={post.slug} to={`/blog/${post.slug}`} className="group block border-t-4 border-gold bg-white p-6 shadow-sm transition-colors hover:bg-cream">
-              <span className="font-heading text-xs font-semibold uppercase tracking-wide text-gold">
+            <Link key={post.slug} to={`/blog/${post.slug}`} className="group block border-t-4 border-silver bg-white p-6 shadow-sm transition-colors hover:bg-cream">
+              <span className="font-heading text-xs font-semibold uppercase tracking-wide text-silver">
                 {post.tag} &middot; {post.readTime}
               </span>
               <h3 className="mt-3 text-navy">{post.title}</h3>
               <p className="mt-2 font-body text-sm leading-relaxed text-mid">{post.excerpt}</p>
-              <span className="mt-4 inline-block font-heading text-sm font-semibold uppercase tracking-wide text-gold group-hover:text-gold-lt">
+              <span className="mt-4 inline-block font-heading text-sm font-semibold uppercase tracking-wide text-silver group-hover:text-silver-lt">
                 Read More &rarr;
               </span>
             </Link>

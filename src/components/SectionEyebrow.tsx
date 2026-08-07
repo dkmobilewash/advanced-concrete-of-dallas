@@ -19,10 +19,10 @@ export default function SectionEyebrow({
   return (
     <div className={`mb-10 ${isCenter ? 'text-center mx-auto max-w-2xl' : 'text-left'}`}>
       <div className={`flex items-center gap-3 mb-3 ${isCenter ? 'justify-center' : ''}`}>
-        <span className="block h-[2px] w-10 bg-gold" />
+        <span className="block h-[2px] w-10 bg-silver" />
         <span
           className={`font-heading text-xs font-semibold uppercase tracking-[0.15em] ${
-            isDark ? 'text-gold-lt' : 'text-gold'
+            isDark ? 'text-silver-lt' : 'text-silver'
           }`}
         >
           {eyebrow}

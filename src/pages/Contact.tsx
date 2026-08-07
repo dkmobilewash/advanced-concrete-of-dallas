@@ -41,7 +41,7 @@ export default function Contact() {
   }
 
   const inputClasses =
-    'w-full border border-rule bg-white px-4 py-3 font-body text-base text-charcoal placeholder:text-mid/60 focus:border-gold focus:outline-none min-h-[44px]'
+    'w-full border border-rule bg-white px-4 py-3 font-body text-base text-charcoal placeholder:text-mid/60 focus:border-silver focus:outline-none min-h-[44px]'
   const labelClasses = 'mb-1.5 block font-heading text-sm font-semibold uppercase tracking-wide text-navy'
 
   return (
@@ -65,7 +65,7 @@ export default function Contact() {
 
             {status === 'success' ? (
               <div className="mt-6 flex flex-col items-center border border-rule bg-cream p-8 text-center">
-                <CheckCircle className="h-10 w-10 text-gold" />
+                <CheckCircle className="h-10 w-10 text-silver" />
                 <p className="mt-4 font-heading text-lg font-semibold text-navy">Request Received</p>
                 <p className="mt-2 font-body text-sm text-mid">We&rsquo;ll be in touch within 1 business day!</p>
               </div>
@@ -171,7 +171,7 @@ export default function Contact() {
 
           <div className="fade-up space-y-6">
             <a href={BUSINESS.phoneHref} className="flex items-center gap-4 bg-navy p-6 text-white transition-colors hover:bg-navy-dark">
-              <Phone className="h-8 w-8 shrink-0 text-gold" />
+              <Phone className="h-8 w-8 shrink-0 text-silver" />
               <div>
                 <p className="text-xs uppercase tracking-wide text-white/60">Call us</p>
                 <p className="font-heading text-2xl font-semibold">{BUSINESS.phone}</p>
@@ -181,13 +181,13 @@ export default function Contact() {
             <div className="border border-rule bg-cream p-6">
               <ul className="space-y-4 font-body text-sm text-mid">
                 <li className="flex items-start gap-3">
-                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                  <a href={`mailto:${BUSINESS.email}`} className="break-all hover:text-gold">
+                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-silver" />
+                  <a href={`mailto:${BUSINESS.email}`} className="break-all hover:text-silver">
                     {BUSINESS.email}
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Clock className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                  <Clock className="mt-0.5 h-5 w-5 shrink-0 text-silver" />
                   {BUSINESS.hours}
                 </li>
               </ul>
@@ -198,7 +198,7 @@ export default function Contact() {
               <ul className="mt-4 space-y-3">
                 {trustBadges.map((b) => (
                   <li key={b.label} className="flex items-center gap-3">
-                    <b.icon className="h-5 w-5 text-gold" />
+                    <b.icon className="h-5 w-5 text-silver" />
                     <span className="font-heading text-sm font-semibold text-navy">{b.label}</span>
                   </li>
                 ))}

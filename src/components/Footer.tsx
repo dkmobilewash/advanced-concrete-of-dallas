@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <span className="font-heading text-lg font-bold uppercase text-white">{BUSINESS.shortName}</span>
             <br />
-            <span className="font-serif text-sm italic text-gold-lt">of Dallas</span>
+            <span className="font-serif text-sm italic text-silver-lt">of Dallas</span>
             <p className="mt-4 font-body text-sm leading-relaxed text-white/60">{BUSINESS.tagline}</p>
             <p className="mt-3 font-body text-xs text-white/40">{BUSINESS.license}</p>
             <div className="mt-5 flex gap-3">
@@ -23,7 +23,7 @@ export default function Footer() {
                 aria-label={`${BUSINESS.name} on Facebook`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-navy"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-silver hover:text-navy"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -32,7 +32,7 @@ export default function Footer() {
                 aria-label={`${BUSINESS.name} on Instagram`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-navy"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-silver hover:text-navy"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -40,11 +40,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-gold-lt">Services</h3>
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-silver-lt">Services</h3>
             <ul className="mt-4 space-y-2.5">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/${s.slug}`} className="font-body text-sm text-white/60 hover:text-gold-lt">
+                  <Link to={`/${s.slug}`} className="font-body text-sm text-white/60 hover:text-silver-lt">
                     {s.name}
                   </Link>
                 </li>
@@ -53,11 +53,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-gold-lt">Service Areas</h3>
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-silver-lt">Service Areas</h3>
             <ul className="mt-4 space-y-2.5">
               {serviceAreas.map((a) => (
                 <li key={a.slug}>
-                  <Link to={`/service-areas/${a.slug}`} className="font-body text-sm text-white/60 hover:text-gold-lt">
+                  <Link to={`/service-areas/${a.slug}`} className="font-body text-sm text-white/60 hover:text-silver-lt">
                     {a.name}
                   </Link>
                 </li>
@@ -66,26 +66,26 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-gold-lt">Contact</h3>
+            <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-silver-lt">Contact</h3>
             <ul className="mt-4 space-y-3 font-body text-sm text-white/60">
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-silver" />
                 {BUSINESS.addressLine}
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href={BUSINESS.phoneHref} className="hover:text-gold-lt">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-silver" />
+                <a href={BUSINESS.phoneHref} className="hover:text-silver-lt">
                   {BUSINESS.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href={`mailto:${BUSINESS.email}`} className="break-all hover:text-gold-lt">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-silver" />
+                <a href={`mailto:${BUSINESS.email}`} className="break-all hover:text-silver-lt">
                   {BUSINESS.email}
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-silver" />
                 {BUSINESS.hours}
               </li>
             </ul>

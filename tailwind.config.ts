@@ -9,15 +9,15 @@ const config: Config = {
     },
     extend: {
       colors: {
-        navy: '#1B2B3A',
-        'navy-dark': '#111D27',
-        gold: '#B8863B',
-        'gold-lt': '#D4A45A',
-        cream: '#F5F0E8',
+        navy: '#16233F',
+        'navy-dark': '#0E1826',
+        silver: '#7E8998',
+        'silver-lt': '#A6AFBC',
+        cream: '#F1F3F6',
         charcoal: '#2C2C2C',
-        mid: '#5A5A5A',
-        rule: '#D9D0C0',
-        'section-alt': '#EDE8DF',
+        mid: '#5C6672',
+        rule: '#D6DCE2',
+        'section-alt': '#E6EAEE',
       },
       fontFamily: {
         heading: ['Oswald', 'Arial Narrow', 'sans-serif'],

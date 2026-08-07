@@ -38,7 +38,7 @@ function NavDropdown({
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex items-center gap-1 font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-gold"
+        className="flex items-center gap-1 font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-silver"
       >
         {label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
@@ -62,7 +62,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="hidden bg-navy md:block">
         <div className="container-acd flex items-center justify-between py-2 text-sm">
-          <a href={BUSINESS.phoneHref} className="font-heading font-semibold text-gold-lt hover:text-gold">
+          <a href={BUSINESS.phoneHref} className="font-heading font-semibold text-silver-lt hover:text-silver">
             {BUSINESS.phone}
           </a>
           <span className="font-body text-white/70">{BUSINESS.tagline}</span>
@@ -73,7 +73,7 @@ export default function Header() {
         <div className="container-acd flex h-full items-center justify-between">
           <Link to="/" className="flex flex-col leading-none">
             <span className="font-heading text-xl font-bold uppercase text-navy">{BUSINESS.shortName}</span>
-            <span className="font-serif text-sm italic text-gold">of Dallas</span>
+            <span className="font-serif text-sm italic text-silver">of Dallas</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
@@ -84,7 +84,7 @@ export default function Header() {
                 </Link>
                 <div className="my-1 border-t border-rule" />
                 {services.map((s) => (
-                  <Link key={s.slug} to={`/${s.slug}`} className="px-3 py-2 font-body text-sm text-mid hover:bg-cream hover:text-gold">
+                  <Link key={s.slug} to={`/${s.slug}`} className="px-3 py-2 font-body text-sm text-mid hover:bg-cream hover:text-silver">
                     {s.name}
                   </Link>
                 ))}
@@ -94,20 +94,20 @@ export default function Header() {
             <NavDropdown label="Service Areas">
               <div className="grid w-[28rem] grid-cols-2 gap-1">
                 {serviceAreas.map((a) => (
-                  <Link key={a.slug} to={`/service-areas/${a.slug}`} className="px-3 py-2 font-body text-sm text-mid hover:bg-cream hover:text-gold">
+                  <Link key={a.slug} to={`/service-areas/${a.slug}`} className="px-3 py-2 font-body text-sm text-mid hover:bg-cream hover:text-silver">
                     {a.name}
                   </Link>
                 ))}
               </div>
             </NavDropdown>
 
-            <Link to="/gallery" className="font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-gold">
+            <Link to="/gallery" className="font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-silver">
               Gallery
             </Link>
-            <Link to="/blog" className="font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-gold">
+            <Link to="/blog" className="font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-silver">
               Blog
             </Link>
-            <Link to="/about-advanced-concrete-of-dallas" className="font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-gold">
+            <Link to="/about-advanced-concrete-of-dallas" className="font-heading text-sm font-semibold uppercase tracking-wide text-navy hover:text-silver">
               About
             </Link>
           </nav>

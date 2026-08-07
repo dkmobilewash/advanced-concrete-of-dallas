@@ -72,9 +72,9 @@ export default function ServiceAreaPage({ area }: ServiceAreaPageProps) {
 
       <section className="section bg-white">
         <div className="container-acd max-w-3xl fade-up">
-          <div className="border-l-4 border-gold bg-cream p-6">
+          <div className="border-l-4 border-silver bg-cream p-6">
             <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-gold" />
+              <MapPin className="h-5 w-5 text-silver" />
               <h3 className="text-navy">Local to {area.name}</h3>
             </div>
             <p className="mt-3 font-body text-sm leading-relaxed text-mid">{area.localNotes}</p>

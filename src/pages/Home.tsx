@@ -92,7 +92,7 @@ export default function Home() {
         <div className="container-acd flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
           {trustPoints.map((t) => (
             <div key={t.label} className="flex items-center gap-2 text-mid">
-              <t.icon className="h-5 w-5 text-gold" />
+              <t.icon className="h-5 w-5 text-silver" />
               <span className="font-heading text-sm font-semibold uppercase tracking-wide">{t.label}</span>
             </div>
           ))}
@@ -137,7 +137,7 @@ export default function Home() {
               <Link
                 key={a.slug}
                 to={`/service-areas/${a.slug}`}
-                className="inline-flex items-center gap-2 border border-white/20 px-5 py-3 font-heading text-sm font-medium text-white transition-colors hover:border-gold hover:bg-gold hover:text-navy"
+                className="inline-flex items-center gap-2 border border-white/20 px-5 py-3 font-heading text-sm font-medium text-white transition-colors hover:border-silver hover:bg-silver hover:text-navy"
               >
                 <MapPin className="h-4 w-4" />
                 {a.name}
