@@ -34,6 +34,13 @@ export interface ServiceArea {
   closingLine: string
 }
 
+export interface Testimonial {
+  name: string
+  area: string
+  rating: number
+  quote: string
+}
+
 export type BlogSection =
   | { type: 'h2'; text: string }
   | { type: 'h3'; text: string }
