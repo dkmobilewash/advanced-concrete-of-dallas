@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import PageMeta from '@/components/PageMeta'
 import PageHero from '@/components/PageHero'
-import { Phone, Mail, Clock, ShieldCheck, ClipboardCheck, CheckCircle, AlertCircle } from '@/components/icons'
+import { Phone, Mail, Clock, MapPin, ShieldCheck, ClipboardCheck, CheckCircle, AlertCircle } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { BUSINESS } from '@/lib/business'
 import { supabase } from '@/lib/supabase'
@@ -48,7 +48,7 @@ export default function Contact() {
     <div ref={fadeRef}>
       <PageMeta
         title="Free Estimate | Contact Us"
-        description="Contact Advanced Concrete of Dallas for a free concrete estimate in Dallas, TX. Call (214) 555-0142 or fill out our online form."
+        description="Contact Advanced Concrete of Dallas for a free concrete estimate in Dallas, TX. Call (214) 466-6247 or fill out our online form."
         canonicalPath="/free-estimate-dallas"
       />
 
@@ -180,6 +180,10 @@ export default function Contact() {
 
             <div className="border border-rule bg-cream p-6">
               <ul className="space-y-4 font-body text-sm text-mid">
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-silver" />
+                  {BUSINESS.addressLine}
+                </li>
                 <li className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-5 w-5 shrink-0 text-silver" />
                   <a href={`mailto:${BUSINESS.email}`} className="break-all hover:text-silver">

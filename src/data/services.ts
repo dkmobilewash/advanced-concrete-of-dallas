@@ -8,7 +8,7 @@ export const services: Service[] = [
       'Reinforced concrete driveways built to handle Dallas heat and North Texas clay soil, with decorative finish options.',
     metaTitle: 'Concrete Driveway Installation in Dallas, TX',
     metaDescription:
-      'Durable, code-compliant concrete driveways in Dallas, TX. Broom finish, exposed aggregate, and stamped options. Free estimates — call (214) 555-0142.',
+      'Durable, code-compliant concrete driveways in Dallas, TX. Broom finish, exposed aggregate, and stamped options. Free estimates — call (214) 466-6247.',
     heroImage: 'https://picsum.photos/seed/acd-driveway-hero/1600/900',
     heroSubtitle: 'Reinforced concrete driveways built for Dallas heat and clay soil movement.',
     intro: [
@@ -77,7 +77,7 @@ export const services: Service[] = [
       'Custom concrete patios designed for outdoor living, with stamped, stained, and cool-surface finish options.',
     metaTitle: 'Concrete Patio Installation in Dallas, TX',
     metaDescription:
-      'Custom concrete patios built for Dallas backyards. Stamped, stained, and cool deck finishes available. Free estimates — call (214) 555-0142.',
+      'Custom concrete patios built for Dallas backyards. Stamped, stained, and cool deck finishes available. Free estimates — call (214) 466-6247.',
     heroImage: 'https://picsum.photos/seed/acd-patio-hero/1600/900',
     heroSubtitle: 'Custom patios built for the way Dallas families actually use their backyards.',
     intro: [
@@ -148,7 +148,7 @@ export const services: Service[] = [
       'Slip-resistant, heat-reflective pool deck surfaces designed to stay cool underfoot through Texas summers.',
     metaTitle: 'Pool Deck Resurfacing & Installation in Dallas, TX',
     metaDescription:
-      'Cool deck and textured concrete pool decks in Dallas, TX — slip-resistant and built to stay cool in Texas heat. Free estimates — call (214) 555-0142.',
+      'Cool deck and textured concrete pool decks in Dallas, TX — slip-resistant and built to stay cool in Texas heat. Free estimates — call (214) 466-6247.',
     heroImage: 'https://picsum.photos/seed/acd-pooldeck-hero/1600/900',
     heroSubtitle: 'Slip-resistant, heat-reflective surfaces built for Texas pool season.',
     intro: [
@@ -212,7 +212,7 @@ export const services: Service[] = [
       'CMU retaining and privacy walls built to handle sloped lots and add lasting structure to your property.',
     metaTitle: 'Retaining Wall & Block Wall Construction in Dallas, TX',
     metaDescription:
-      'Retaining walls, privacy walls, and CMU block construction in Dallas, TX. Built for sloped lots and long-term durability. Call (214) 555-0142.',
+      'Retaining walls, privacy walls, and CMU block construction in Dallas, TX. Built for sloped lots and long-term durability. Call (214) 466-6247.',
     heroImage: 'https://picsum.photos/seed/acd-blockwall-hero/1600/900',
     heroSubtitle: 'Retaining and privacy walls built to handle sloped Dallas lots.',
     intro: [
@@ -280,7 +280,7 @@ export const services: Service[] = [
       'Engineered foundations and slabs designed to handle North Texas clay soil movement.',
     metaTitle: 'Foundation & Slab Contractors in Dallas, TX',
     metaDescription:
-      'Post-tension and conventional concrete foundations and slabs in Dallas, TX, engineered for North Texas clay soil. Call (214) 555-0142 for a quote.',
+      'Post-tension and conventional concrete foundations and slabs in Dallas, TX, engineered for North Texas clay soil. Call (214) 466-6247 for a quote.',
     heroImage: 'https://picsum.photos/seed/acd-foundation-hero/1600/900',
     heroSubtitle: 'Engineered slabs built to handle North Texas clay soil movement.',
     intro: [
@@ -352,7 +352,7 @@ export const services: Service[] = [
       'Parking lots, sidewalks, and warehouse floors for Dallas businesses, with scheduling built around minimizing downtime.',
     metaTitle: 'Commercial Concrete Contractor in Dallas, TX',
     metaDescription:
-      'Commercial concrete services in Dallas, TX — parking lots, sidewalks, ADA hardscaping, and warehouse floors. Bonded & insured. Call (214) 555-0142.',
+      'Commercial concrete services in Dallas, TX — parking lots, sidewalks, ADA hardscaping, and warehouse floors. Bonded & insured. Call (214) 466-6247.',
     heroImage: 'https://picsum.photos/seed/acd-commercial-hero/1600/900',
     heroSubtitle: 'Parking lots, sidewalks, and warehouse floors for growing Dallas businesses.',
     intro: [

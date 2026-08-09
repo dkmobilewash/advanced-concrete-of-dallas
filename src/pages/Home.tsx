@@ -112,8 +112,10 @@ export default function Home() {
     email: BUSINESS.email,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: BUSINESS.streetAddress,
       addressLocality: 'Dallas',
       addressRegion: 'TX',
+      postalCode: BUSINESS.postalCode,
       addressCountry: 'US',
     },
     areaServed: ['Dallas', ...serviceAreas.map((a) => a.name)],
