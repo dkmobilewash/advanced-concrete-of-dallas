@@ -6,10 +6,10 @@ export const BUSINESS = {
   state: 'TX',
   phone: '(214) 555-0142',
   phoneHref: 'tel:+12145550142',
-  email: 'info@advancedconcreteofdallas.com',
+  email: 'info@advancedconcretedallas.com',
   hours: 'Mon–Sat 7am–6pm',
   addressLine: 'Dallas, TX',
   license: 'Licensed & Insured General Contractor — TX',
-  siteUrl: 'https://advancedconcreteofdallas.com',
+  siteUrl: 'https://advancedconcretedallas.com',
   founded: 2009,
 } as const

@@ -5,6 +5,10 @@ node_modules
 dist
 dist-ssr
 
+# generated at build time by scripts/generate-sitemap.ts
+public/sitemap.xml
+public/robots.txt
+
 # env
 .env
 .env.local
