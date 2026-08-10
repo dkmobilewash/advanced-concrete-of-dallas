@@ -5,6 +5,12 @@ import ServiceCard from '@/components/ServiceCard'
 import CtaSection from '@/components/CtaSection'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { services } from '@/data/services'
+import { getBreadcrumbSchema } from '@/lib/schema'
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/concrete-services' },
+])
 
 export default function ServicesOverview() {
   const fadeRef = useFadeUp<HTMLDivElement>()
@@ -15,6 +21,7 @@ export default function ServicesOverview() {
         title="Concrete Services in Dallas TX"
         description="Explore our full range of concrete services including driveways, patios, pool decks, retaining walls, foundations, and commercial concrete work in Dallas, TX."
         canonicalPath="/concrete-services"
+        schema={breadcrumbSchema}
       />
 
       <PageHero

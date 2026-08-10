@@ -7,6 +7,7 @@
     "dev": "vite",
     "prebuild": "tsx scripts/generate-sitemap.ts",
     "build": "tsc -b && vite build",
+    "postbuild": "tsx --tsconfig tsconfig.app.json scripts/prerender.tsx",
     "preview": "vite preview",
     "lint": "eslint ."
   },

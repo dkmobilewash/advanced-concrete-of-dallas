@@ -11,6 +11,7 @@ import { useFadeUp } from '@/hooks/useFadeUp'
 import { getServiceBySlug } from '@/data/services'
 import { serviceAreas } from '@/data/serviceAreas'
 import { BUSINESS } from '@/lib/business'
+import { businessRef, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 
 interface ServiceDetailPageProps {
   slug: string
@@ -26,13 +27,19 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: service.name,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: BUSINESS.name,
-      telephone: BUSINESS.phone,
-    },
-    areaServed: 'Dallas, TX',
+    description: service.metaDescription,
+    url: `${BUSINESS.siteUrl}/${service.slug}`,
+    provider: businessRef(),
+    areaServed: { '@type': 'Place', name: 'Dallas, TX' },
   }
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/concrete-services' },
+    { name: service.name, path: `/${service.slug}` },
+  ])
+
+  const faqSchema = getFaqPageSchema(service.faq)
 
   return (
     <div ref={fadeRef}>
@@ -41,7 +48,7 @@ export default function ServiceDetailPage({ slug }: ServiceDetailPageProps) {
         description={service.metaDescription}
         canonicalPath={`/${service.slug}`}
         ogImage={service.heroImage}
-        schema={schema}
+        schema={[schema, breadcrumbSchema, faqSchema]}
       />
 
       <PageHero

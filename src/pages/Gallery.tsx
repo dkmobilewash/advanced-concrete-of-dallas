@@ -3,6 +3,7 @@ import PageMeta from '@/components/PageMeta'
 import PageHero from '@/components/PageHero'
 import CtaSection from '@/components/CtaSection'
 import { useFadeUp } from '@/hooks/useFadeUp'
+import { getBreadcrumbSchema } from '@/lib/schema'
 import type { GalleryImage } from '@/types'
 
 const categories = ['All', 'Driveways', 'Patios', 'Pool Decks', 'Retaining Walls', 'Foundations', 'Commercial'] as const
@@ -26,6 +27,11 @@ const galleryImages: GalleryImage[] = [
   { id: 16, src: 'https://picsum.photos/seed/acd-gal-16/800/600', alt: 'Warehouse interior concrete floor finish', category: 'Commercial' },
 ]
 
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Gallery', path: '/gallery' },
+])
+
 export default function Gallery() {
   const fadeRef = useFadeUp<HTMLDivElement>()
   const [active, setActive] = useState<(typeof categories)[number]>('All')
@@ -38,6 +44,7 @@ export default function Gallery() {
         title="Concrete Project Gallery"
         description="Browse photos of completed concrete projects in Dallas, TX — driveways, patios, pool decks, retaining walls, and more."
         canonicalPath="/gallery"
+        schema={breadcrumbSchema}
       />
 
       <PageHero

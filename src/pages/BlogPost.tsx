@@ -5,6 +5,7 @@ import CtaSection from '@/components/CtaSection'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { getBlogPostBySlug } from '@/data/blogPosts'
 import { BUSINESS } from '@/lib/business'
+import { LOGO_IMAGE_OBJECT, LOGO_URL, businessRef, getBreadcrumbSchema } from '@/lib/schema'
 import type { BlogSection } from '@/types'
 
 function Section({ section }: { section: BlogSection }) {
@@ -47,18 +48,36 @@ export default function BlogPost() {
 
   if (!post) return <Navigate to="/blog" replace />
 
+  const canonicalUrl = `${BUSINESS.siteUrl}/blog/${post.slug}`
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
-    datePublished: post.date,
     description: post.excerpt,
-    author: { '@type': 'Organization', name: BUSINESS.name },
+    image: LOGO_URL,
+    datePublished: post.date,
+    dateModified: post.date,
+    url: canonicalUrl,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    author: { '@type': 'Organization', name: BUSINESS.name, ...businessRef() },
+    publisher: { '@type': 'Organization', name: BUSINESS.name, logo: LOGO_IMAGE_OBJECT, ...businessRef() },
   }
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ])
 
   return (
     <div ref={fadeRef}>
-      <PageMeta title={post.title} description={post.excerpt} canonicalPath={`/blog/${post.slug}`} schema={schema} />
+      <PageMeta
+        title={post.title}
+        description={post.excerpt}
+        canonicalPath={`/blog/${post.slug}`}
+        schema={[schema, breadcrumbSchema]}
+      />
 
       <PageHero
         title={post.title}

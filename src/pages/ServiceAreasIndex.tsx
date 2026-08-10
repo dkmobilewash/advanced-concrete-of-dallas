@@ -5,6 +5,12 @@ import CtaSection from '@/components/CtaSection'
 import { MapPin } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { serviceAreas } from '@/data/serviceAreas'
+import { getBreadcrumbSchema } from '@/lib/schema'
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Service Areas', path: '/service-areas' },
+])
 
 export default function ServiceAreasIndex() {
   const fadeRef = useFadeUp<HTMLDivElement>()
@@ -15,6 +21,7 @@ export default function ServiceAreasIndex() {
         title="Dallas Service Areas"
         description="Advanced Concrete of Dallas serves Uptown, Highland Park, Preston Hollow, Lakewood, and neighborhoods throughout Dallas, TX."
         canonicalPath="/service-areas"
+        schema={breadcrumbSchema}
       />
 
       <PageHero

@@ -7,6 +7,7 @@ import { MapPin } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { services } from '@/data/services'
 import { BUSINESS } from '@/lib/business'
+import { businessRef, getBreadcrumbSchema } from '@/lib/schema'
 import type { ServiceArea } from '@/types'
 
 interface ServiceAreaPageProps {
@@ -16,14 +17,20 @@ interface ServiceAreaPageProps {
 export default function ServiceAreaPage({ area }: ServiceAreaPageProps) {
   const fadeRef = useFadeUp<HTMLDivElement>()
 
-  const schema = {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Service Areas', path: '/service-areas' },
+    { name: area.name, path: `/service-areas/${area.slug}` },
+  ])
+
+  const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BUSINESS.siteUrl}/` },
-      { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${BUSINESS.siteUrl}/service-areas` },
-      { '@type': 'ListItem', position: 3, name: area.name, item: `${BUSINESS.siteUrl}/service-areas/${area.slug}` },
-    ],
+    '@type': 'Service',
+    serviceType: 'Concrete Contracting',
+    description: `Concrete driveways, patios, foundations, and commercial concrete work in ${area.name}, Dallas TX.`,
+    url: `${BUSINESS.siteUrl}/service-areas/${area.slug}`,
+    provider: businessRef(),
+    areaServed: { '@type': 'Place', name: `${area.name}, Dallas, TX` },
   }
 
   return (
@@ -32,7 +39,7 @@ export default function ServiceAreaPage({ area }: ServiceAreaPageProps) {
         title={`Concrete Contractor in ${area.name}, Dallas TX`}
         description={`${BUSINESS.name} provides concrete driveways, patios, and more in ${area.name}, Dallas, TX. Free estimates — call ${BUSINESS.phone}.`}
         canonicalPath={`/service-areas/${area.slug}`}
-        schema={schema}
+        schema={[serviceSchema, breadcrumbSchema]}
       />
 
       <PageHero

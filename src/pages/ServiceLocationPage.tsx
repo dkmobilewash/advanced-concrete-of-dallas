@@ -10,6 +10,7 @@ import { useFadeUp } from '@/hooks/useFadeUp'
 import { getServiceBySlug, services } from '@/data/services'
 import { getServiceAreaBySlug, serviceAreas } from '@/data/serviceAreas'
 import { BUSINESS } from '@/lib/business'
+import { businessRef, getBreadcrumbSchema, getFaqPageSchema } from '@/lib/schema'
 
 export default function ServiceLocationPage() {
   const { serviceSlug, locationSlug } = useParams<{ serviceSlug: string; locationSlug: string }>()
@@ -35,31 +36,22 @@ export default function ServiceLocationPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: service.name,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: BUSINESS.name,
-      telephone: BUSINESS.phone,
-    },
+    description: `${service.name} in ${area.name}, Dallas TX.`,
+    url: `${BUSINESS.siteUrl}/${service.slug}/${area.slug}`,
+    provider: businessRef(),
     areaServed: {
       '@type': 'Place',
       name: `${area.name}, Dallas, TX`,
     },
   }
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BUSINESS.siteUrl}/` },
-      { '@type': 'ListItem', position: 2, name: service.name, item: `${BUSINESS.siteUrl}/${service.slug}` },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: area.name,
-        item: `${BUSINESS.siteUrl}/${service.slug}/${area.slug}`,
-      },
-    ],
-  }
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: service.name, path: `/${service.slug}` },
+    { name: area.name, path: `/${service.slug}/${area.slug}` },
+  ])
+
+  const faqSchema = getFaqPageSchema(faqItems)
 
   return (
     <div ref={fadeRef}>
@@ -68,7 +60,7 @@ export default function ServiceLocationPage() {
         description={`Professional ${service.name.toLowerCase()} in ${area.name}, Dallas TX. Licensed & insured, free estimates. Call ${BUSINESS.phone}.`}
         canonicalPath={`/${service.slug}/${area.slug}`}
         ogImage={service.heroImage}
-        schema={[schema, breadcrumbSchema]}
+        schema={[schema, breadcrumbSchema, faqSchema]}
       />
 
       <PageHero

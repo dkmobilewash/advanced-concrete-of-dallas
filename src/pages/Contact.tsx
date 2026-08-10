@@ -5,6 +5,8 @@ import { Phone, Mail, Clock, MapPin, ShieldCheck, ClipboardCheck, CheckCircle, A
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { BUSINESS } from '@/lib/business'
 import { supabase } from '@/lib/supabase'
+import { serviceAreas } from '@/data/serviceAreas'
+import { getBusinessSchema, getBreadcrumbSchema } from '@/lib/schema'
 
 const serviceOptions = ['Driveway', 'Patio', 'Pool Deck', 'Retaining Wall', 'Foundation/Slab', 'Commercial', 'Other']
 
@@ -44,12 +46,19 @@ export default function Contact() {
     'w-full border border-rule bg-white px-4 py-3 font-body text-base text-charcoal placeholder:text-mid/60 focus:border-silver focus:outline-none min-h-[44px]'
   const labelClasses = 'mb-1.5 block font-heading text-sm font-semibold uppercase tracking-wide text-navy'
 
+  const schema = getBusinessSchema(['Dallas', ...serviceAreas.map((a) => a.name)])
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Free Estimate', path: '/free-estimate-dallas' },
+  ])
+
   return (
     <div ref={fadeRef}>
       <PageMeta
         title="Free Estimate | Contact Us"
         description="Contact Advanced Concrete of Dallas for a free concrete estimate in Dallas, TX. Call (214) 466-6247 or fill out our online form."
         canonicalPath="/free-estimate-dallas"
+        schema={[schema, breadcrumbSchema]}
       />
 
       <PageHero

@@ -3,6 +3,12 @@ import PageMeta from '@/components/PageMeta'
 import PageHero from '@/components/PageHero'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { blogPosts } from '@/data/blogPosts'
+import { getBreadcrumbSchema } from '@/lib/schema'
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+])
 
 export default function BlogIndex() {
   const fadeRef = useFadeUp<HTMLDivElement>()
@@ -13,6 +19,7 @@ export default function BlogIndex() {
         title="Concrete Tips & Guides | Blog"
         description="Guides on concrete costs, materials, maintenance, and comparisons for Dallas, TX homeowners from Advanced Concrete of Dallas."
         canonicalPath="/blog"
+        schema={breadcrumbSchema}
       />
 
       <PageHero

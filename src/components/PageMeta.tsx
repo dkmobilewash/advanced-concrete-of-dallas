@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { BUSINESS } from '@/lib/business'
 
 interface PageMetaProps {
@@ -9,51 +8,31 @@ interface PageMetaProps {
   schema?: Record<string, unknown> | Record<string, unknown>[]
 }
 
-function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
-  let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`)
-  if (!el) {
-    el = document.createElement('meta')
-    el.setAttribute(attr, key)
-    document.head.appendChild(el)
-  }
-  el.setAttribute('content', content)
-}
-
+/**
+ * Renders <title>/<meta>/<link> as plain JSX rather than imperative DOM
+ * manipulation. React 19 hoists title/meta/link elements into <head>
+ * automatically (deduping as needed) on both the client and during server
+ * rendering, which is what lets the build-time prerender step (see
+ * scripts/prerender.tsx) capture real head content in the static HTML
+ * instead of only the client-side DOM.
+ */
 export default function PageMeta({ title, description, canonicalPath, ogImage, schema }: PageMetaProps) {
-  useEffect(() => {
-    const fullTitle = title.includes(BUSINESS.name) ? title : `${title} | ${BUSINESS.name}`
-    document.title = fullTitle
+  const fullTitle = title.includes(BUSINESS.name) ? title : `${title} | ${BUSINESS.name}`
+  const canonicalUrl = `${BUSINESS.siteUrl}${canonicalPath}`
+  const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : []
 
-    upsertMeta('name', 'description', description)
-    upsertMeta('property', 'og:title', fullTitle)
-    upsertMeta('property', 'og:description', description)
-    if (ogImage) upsertMeta('property', 'og:image', ogImage)
-
-    let canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-    if (!canonicalEl) {
-      canonicalEl = document.createElement('link')
-      canonicalEl.setAttribute('rel', 'canonical')
-      document.head.appendChild(canonicalEl)
-    }
-    canonicalEl.setAttribute('href', `${BUSINESS.siteUrl}${canonicalPath}`)
-
-    const schemaEls: HTMLScriptElement[] = []
-    if (schema) {
-      const schemas = Array.isArray(schema) ? schema : [schema]
-      for (const s of schemas) {
-        const el = document.createElement('script')
-        el.type = 'application/ld+json'
-        el.text = JSON.stringify(s)
-        el.dataset.pageSchema = 'true'
-        document.head.appendChild(el)
-        schemaEls.push(el)
-      }
-    }
-
-    return () => {
-      schemaEls.forEach((el) => el.remove())
-    }
-  }, [title, description, canonicalPath, ogImage, schema])
-
-  return null
+  return (
+    <>
+      <title>{fullTitle}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonicalUrl} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      {schemas.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  )
 }

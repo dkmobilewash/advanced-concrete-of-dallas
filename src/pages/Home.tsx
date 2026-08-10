@@ -13,6 +13,7 @@ import { services } from '@/data/services'
 import { serviceAreas } from '@/data/serviceAreas'
 import { testimonials } from '@/data/testimonials'
 import { getBlogPostBySlug } from '@/data/blogPosts'
+import { getBusinessSchema, getFaqPageSchema } from '@/lib/schema'
 
 const trustPoints = [
   { icon: ShieldCheck, label: 'Licensed & Insured' },
@@ -104,23 +105,8 @@ export default function Home() {
   const fadeRef = useFadeUp<HTMLDivElement>()
   const relatedReading = relatedReadingSlugs.map((slug) => getBlogPostBySlug(slug)).filter((p) => p !== undefined)
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: BUSINESS.name,
-    telephone: BUSINESS.phone,
-    email: BUSINESS.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: BUSINESS.streetAddress,
-      addressLocality: 'Dallas',
-      addressRegion: 'TX',
-      postalCode: BUSINESS.postalCode,
-      addressCountry: 'US',
-    },
-    areaServed: ['Dallas', ...serviceAreas.map((a) => a.name)],
-    priceRange: '$$',
-  }
+  const schema = getBusinessSchema(['Dallas', ...serviceAreas.map((a) => a.name)])
+  const faqSchema = getFaqPageSchema(homeFaq)
 
   return (
     <div ref={fadeRef}>
@@ -128,7 +114,7 @@ export default function Home() {
         title="Concrete Contractor Dallas TX"
         description="Advanced Concrete of Dallas pours driveways, patios, pool decks, and commercial concrete throughout Dallas, TX. Licensed, insured, free estimates."
         canonicalPath="/"
-        schema={schema}
+        schema={[schema, faqSchema]}
       />
 
       <PageHero

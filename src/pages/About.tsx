@@ -5,6 +5,7 @@ import CtaSection from '@/components/CtaSection'
 import { ShieldCheck, ClipboardCheck, MapPin, Star } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { BUSINESS } from '@/lib/business'
+import { getBreadcrumbSchema } from '@/lib/schema'
 
 const values = [
   { icon: ShieldCheck, label: 'Licensed & Fully Insured', description: 'Every project is backed by proper licensing and insurance for your protection.' },
@@ -12,6 +13,11 @@ const values = [
   { icon: MapPin, label: 'Locally Owned & Operated', description: 'A Dallas-based crew that knows the neighborhoods, soil, and codes we build for.' },
   { icon: Star, label: 'Craftsmanship That Lasts', description: 'We engineer for North Texas clay soil and Texas heat, not just the minimum code requirement.' },
 ]
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about-advanced-concrete-of-dallas' },
+])
 
 export default function About() {
   const fadeRef = useFadeUp<HTMLDivElement>()
@@ -22,6 +28,7 @@ export default function About() {
         title={`About ${BUSINESS.name}`}
         description={`Learn about ${BUSINESS.name}, a locally owned, licensed and insured concrete contractor serving Dallas, TX and the surrounding neighborhoods.`}
         canonicalPath="/about-advanced-concrete-of-dallas"
+        schema={breadcrumbSchema}
       />
 
       <PageHero
