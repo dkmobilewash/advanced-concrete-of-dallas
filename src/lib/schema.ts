@@ -50,6 +50,11 @@ export function getBusinessSchema(areaServedNames: string[]) {
       postalCode: BUSINESS.postalCode,
       addressCountry: 'US',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: BUSINESS.latitude,
+      longitude: BUSINESS.longitude,
+    },
     areaServed: areaServedNames.map((name) => ({ '@type': 'Place', name })),
     priceRange: '$$',
     openingHoursSpecification: OPENING_HOURS_SPECIFICATION,

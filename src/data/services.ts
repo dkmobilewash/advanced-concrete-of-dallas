@@ -1,3 +1,4 @@
+import { BUSINESS } from '../lib/business'
 import type { Service } from '@/types'
 
 export const services: Service[] = [
@@ -9,7 +10,7 @@ export const services: Service[] = [
     metaTitle: 'Concrete Driveway Installation in Dallas, TX',
     metaDescription:
       'Durable, code-compliant concrete driveways in Dallas, TX. Broom finish, exposed aggregate, and stamped options. Free estimates — call (214) 466-6247.',
-    heroImage: 'https://picsum.photos/seed/acd-driveway-hero/1600/900',
+    heroImage: `${BUSINESS.siteUrl}/images/services/driveways.webp`,
     heroSubtitle: 'Reinforced concrete driveways built for Dallas heat and clay soil movement.',
     intro: [
       "A driveway in Dallas takes a beating most homeowners never think about until it cracks. Summer temperatures routinely climb past 100°F, and the expansive clay soil underneath North Texas neighborhoods swells and shrinks with every rain cycle. A driveway that isn't poured to the right thickness, with the right reinforcement, is a driveway that will crack within a few years.",
@@ -78,7 +79,7 @@ export const services: Service[] = [
     metaTitle: 'Concrete Patio Installation in Dallas, TX',
     metaDescription:
       'Custom concrete patios built for Dallas backyards. Stamped, stained, and cool deck finishes available. Free estimates — call (214) 466-6247.',
-    heroImage: 'https://picsum.photos/seed/acd-patio-hero/1600/900',
+    heroImage: `${BUSINESS.siteUrl}/images/services/patios.webp`,
     heroSubtitle: 'Custom patios built for the way Dallas families actually use their backyards.',
     intro: [
       "Outdoor living isn't a trend in Dallas — it's a way of life. With long, warm seasons that stretch from March through October, your patio gets real, regular use for grilling, entertaining, and just getting outside after the sun goes down. A patio built to last needs to hold up to foot traffic, furniture, and the occasional pool splash without cracking or discoloring.",
@@ -149,7 +150,7 @@ export const services: Service[] = [
     metaTitle: 'Pool Deck Resurfacing & Installation in Dallas, TX',
     metaDescription:
       'Cool deck and textured concrete pool decks in Dallas, TX — slip-resistant and built to stay cool in Texas heat. Free estimates — call (214) 466-6247.',
-    heroImage: 'https://picsum.photos/seed/acd-pooldeck-hero/1600/900',
+    heroImage: `${BUSINESS.siteUrl}/images/services/pool-decks.webp`,
     heroSubtitle: 'Slip-resistant, heat-reflective surfaces built for Texas pool season.',
     intro: [
       "Dallas homeowners rely on their pools from April through October, and the deck around it matters just as much as the pool itself. A surface that gets too hot to stand on, or too slick when wet, turns a great backyard feature into a liability. We build and resurface pool decks specifically for how they'll actually be used in North Texas heat.",
@@ -213,7 +214,7 @@ export const services: Service[] = [
     metaTitle: 'Retaining Wall & Block Wall Construction in Dallas, TX',
     metaDescription:
       'Retaining walls, privacy walls, and CMU block construction in Dallas, TX. Built for sloped lots and long-term durability. Call (214) 466-6247.',
-    heroImage: 'https://picsum.photos/seed/acd-blockwall-hero/1600/900',
+    heroImage: `${BUSINESS.siteUrl}/images/services/retaining-walls.webp`,
     heroSubtitle: 'Retaining and privacy walls built to handle sloped Dallas lots.',
     intro: [
       "Retaining walls, privacy walls, and garden borders show up across both older and newer Dallas neighborhoods — anywhere a lot has grade change, a need for separation from a neighbor, or a spot that erodes after heavy rain. Done right, a CMU block wall solves all three at once and lasts for decades.",
@@ -281,7 +282,7 @@ export const services: Service[] = [
     metaTitle: 'Foundation & Slab Contractors in Dallas, TX',
     metaDescription:
       'Post-tension and conventional concrete foundations and slabs in Dallas, TX, engineered for North Texas clay soil. Call (214) 466-6247 for a quote.',
-    heroImage: 'https://picsum.photos/seed/acd-foundation-hero/1600/900',
+    heroImage: `${BUSINESS.siteUrl}/images/services/foundations-slabs.webp`,
     heroSubtitle: 'Engineered slabs built to handle North Texas clay soil movement.',
     intro: [
       "North Texas clay soil expands when it's wet and contracts when it dries out, and it does this every year, in every season. A foundation that isn't engineered for that movement will eventually crack, and once a slab cracks, the fix only gets more expensive over time. This is the single biggest factor we design around on every foundation and slab project in Dallas.",
@@ -353,7 +354,7 @@ export const services: Service[] = [
     metaTitle: 'Commercial Concrete Contractor in Dallas, TX',
     metaDescription:
       'Commercial concrete services in Dallas, TX — parking lots, sidewalks, ADA hardscaping, and warehouse floors. Bonded & insured. Call (214) 466-6247.',
-    heroImage: 'https://picsum.photos/seed/acd-commercial-hero/1600/900',
+    heroImage: `${BUSINESS.siteUrl}/images/services/commercial-concrete.webp`,
     heroSubtitle: 'Parking lots, sidewalks, and warehouse floors for growing Dallas businesses.',
     intro: [
       "Dallas is home to a growing number of corporate campuses, retail centers, and mixed-use developments, from Uptown high-rises to warehouse and distribution space along the I-35 and I-30 corridors. That growth means steady demand for commercial concrete work that meets code, holds up to heavy daily use, and gets done on a schedule that doesn't interrupt business operations.",

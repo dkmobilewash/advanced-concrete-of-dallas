@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from '@/components/Layout'
 import PageLoader from '@/components/PageLoader'
 
@@ -28,6 +28,7 @@ const LakeHighlands = lazy(() => import('@/pages/service-areas/LakeHighlands'))
 const OakCliff = lazy(() => import('@/pages/service-areas/OakCliff'))
 const BishopArtsDistrict = lazy(() => import('@/pages/service-areas/BishopArtsDistrict'))
 const ServiceLocationPage = lazy(() => import('@/pages/ServiceLocationPage'))
+const NotFound = lazy(() => import('@/pages/NotFound'))
 
 export default function App() {
   return (
@@ -66,7 +67,7 @@ export default function App() {
 
             <Route path="/:serviceSlug/:locationSlug" element={<ServiceLocationPage />} />
 
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>

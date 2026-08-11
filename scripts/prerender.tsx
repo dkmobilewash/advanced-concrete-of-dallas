@@ -12,7 +12,7 @@ import { resolve } from 'node:path'
 // automatic runtime configured in tsconfig.app.json.
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { MemoryRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
 import Layout from '../src/components/Layout'
 import Home from '../src/pages/Home'
@@ -40,6 +40,7 @@ import LakeHighlands from '../src/pages/service-areas/LakeHighlands'
 import OakCliff from '../src/pages/service-areas/OakCliff'
 import BishopArtsDistrict from '../src/pages/service-areas/BishopArtsDistrict'
 import ServiceLocationPage from '../src/pages/ServiceLocationPage'
+import NotFound from '../src/pages/NotFound'
 
 import { services } from '../src/data/services'
 import { serviceAreas } from '../src/data/serviceAreas'
@@ -83,7 +84,7 @@ function StaticRoutes() {
 
         <Route path="/:serviceSlug/:locationSlug" element={<ServiceLocationPage />} />
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )
@@ -132,11 +133,10 @@ const DEFAULT_OG_IMAGE_PATTERNS = [
 let baseHead = template
 for (const pattern of DYNAMIC_TAG_PATTERNS) baseHead = baseHead.replace(pattern, '')
 
-let rendered = 0
-for (const route of routes) {
+function renderRouteHtml(initialPath: string): string {
   const markup = renderToStaticMarkup(
     <div id="root">
-      <MemoryRouter initialEntries={[route]}>
+      <MemoryRouter initialEntries={[initialPath]}>
         <StaticRoutes />
       </MemoryRouter>
     </div>
@@ -150,7 +150,7 @@ for (const route of routes) {
   // hoisted, so it reliably splits "head tags" from "app markup".
   const rootIdx = markup.indexOf('<div id="root">')
   if (rootIdx === -1) {
-    throw new Error(`Prerender for ${route} produced no #root div — got: ${markup.slice(0, 200)}`)
+    throw new Error(`Prerender for ${initialPath} produced no #root div — got: ${markup.slice(0, 200)}`)
   }
   const headTags = markup.slice(0, rootIdx)
   const bodyMarkup = markup.slice(rootIdx)
@@ -161,8 +161,12 @@ for (const route of routes) {
   }
   head = head.replace('</head>', `${headTags}</head>`)
 
-  const html = head.replace('<div id="root"></div>', bodyMarkup)
+  return head.replace('<div id="root"></div>', bodyMarkup)
+}
 
+let rendered = 0
+for (const route of routes) {
+  const html = renderRouteHtml(route)
   const outPath = route === '/' ? resolve(distDir, 'index.html') : resolve(distDir, `.${route}`, 'index.html')
   const outDir = resolve(outPath, '..')
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
@@ -170,4 +174,11 @@ for (const route of routes) {
   rendered++
 }
 
-console.log(`Prerendered ${rendered} routes to static HTML in /dist`)
+// Vercel's routing (see vercel.json) serves this exact file, with a real
+// HTTP 404 status, for any path that doesn't match a static file above —
+// i.e. genuinely unknown URLs, instead of a soft-404 fallback to the
+// homepage. Rendered via the same catch-all `*` route App.tsx uses.
+const notFoundHtml = renderRouteHtml('/__prerender-404__')
+writeFileSync(resolve(distDir, '404.html'), notFoundHtml)
+
+console.log(`Prerendered ${rendered} routes + 404.html to static HTML in /dist`)

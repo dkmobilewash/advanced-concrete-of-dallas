@@ -6,6 +6,7 @@ interface PageMetaProps {
   canonicalPath: string
   ogImage?: string
   schema?: Record<string, unknown> | Record<string, unknown>[]
+  noindex?: boolean
 }
 
 /**
@@ -16,7 +17,7 @@ interface PageMetaProps {
  * scripts/prerender.tsx) capture real head content in the static HTML
  * instead of only the client-side DOM.
  */
-export default function PageMeta({ title, description, canonicalPath, ogImage, schema }: PageMetaProps) {
+export default function PageMeta({ title, description, canonicalPath, ogImage, schema, noindex }: PageMetaProps) {
   const fullTitle = title.includes(BUSINESS.name) ? title : `${title} | ${BUSINESS.name}`
   const canonicalUrl = `${BUSINESS.siteUrl}${canonicalPath}`
   const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : []
@@ -25,7 +26,7 @@ export default function PageMeta({ title, description, canonicalPath, ogImage, s
     <>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
+      {noindex ? <meta name="robots" content="noindex, nofollow" /> : <link rel="canonical" href={canonicalUrl} />}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />

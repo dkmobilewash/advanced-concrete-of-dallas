@@ -11,6 +11,8 @@ export const BUSINESS = {
   addressLine: '1402 Fort Worth Ave, Dallas, TX 75208',
   streetAddress: '1402 Fort Worth Ave',
   postalCode: '75208',
+  latitude: 32.766,
+  longitude: -96.832,
   license: 'Licensed & Insured General Contractor — TX',
   siteUrl: 'https://advancedconcretedallas.com',
   founded: 2009,

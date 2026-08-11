@@ -25,7 +25,14 @@ export default function PageHero({
       <div className={`relative overflow-hidden ${gradientClassName}`}>
         {backgroundImage && (
           <>
-            <img src={backgroundImage} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src={backgroundImage}
+              alt=""
+              aria-hidden="true"
+              width={1600}
+              height={900}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-navy/70" />
           </>
         )}
