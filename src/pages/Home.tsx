@@ -171,7 +171,7 @@ export default function Home() {
 
           <div className="fade-up flex flex-col gap-4">
             <div className="border border-rule bg-cream p-6 text-center">
-              <p className="font-heading text-4xl font-bold text-silver">
+              <p className="font-heading text-4xl font-bold text-silver" suppressHydrationWarning>
                 {new Date().getFullYear() - BUSINESS.founded}+
               </p>
               <p className="mt-1 font-heading text-sm uppercase tracking-wide text-navy">Years Serving Dallas</p>

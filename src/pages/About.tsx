@@ -57,7 +57,9 @@ export default function About() {
           </div>
           <div className="fade-up flex items-center justify-center border border-rule bg-cream p-10 text-center">
             <div>
-              <p className="font-heading text-5xl font-bold text-silver">{new Date().getFullYear() - BUSINESS.founded}+</p>
+              <p className="font-heading text-5xl font-bold text-silver" suppressHydrationWarning>
+                {new Date().getFullYear() - BUSINESS.founded}+
+              </p>
               <p className="mt-2 font-heading text-sm uppercase tracking-wide text-navy">Years Serving Dallas</p>
             </div>
           </div>

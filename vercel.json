@@ -10,6 +10,21 @@
       "headers": { "Location": "https://advancedconcretedallas.com/$1" },
       "status": 301
     },
+    {
+      "src": "/(.*)",
+      "headers": { "Cache-Control": "public, max-age=0, must-revalidate" },
+      "continue": true
+    },
+    {
+      "src": "/images/(.*)",
+      "headers": { "Cache-Control": "public, max-age=604800" },
+      "continue": true
+    },
+    {
+      "src": "/assets/(.*)",
+      "headers": { "Cache-Control": "public, max-age=31536000, immutable" },
+      "continue": true
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/404.html", "status": 404 }
   ]

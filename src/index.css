@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Metric-matched fallback faces, so the page's fallback-font layout already
+ * matches Oswald/Lato/Source Serif 4's line height and character width
+ * before the real webfont loads — this avoids a layout shift (CLS) when it
+ * swaps in. Values are computed from real font metrics (@capsizecss/metrics
+ * + fontaine's generateFontFace), not estimated — see
+ * scripts/gen-font-metrics.mjs.
+ */
+@font-face {
+  font-family: 'Oswald Fallback';
+  src: local('Arial');
+  size-adjust: 81.4265%;
+  ascent-override: 146.5125%;
+  descent-override: 35.4921%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Lato Fallback';
+  src: local('Arial');
+  size-adjust: 97.6894%;
+  ascent-override: 101.0345%;
+  descent-override: 21.8038%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Source Serif 4 Fallback';
+  src: local('Georgia');
+  size-adjust: 107.4471%;
+  ascent-override: 96.4195%;
+  descent-override: 31.1781%;
+  line-gap-override: 0%;
+}
+
 :root {
   --color-navy: #16233f;
   --color-navy-dark: #0e1826;
@@ -14,9 +49,9 @@
   --color-rule: #d6dce2;
   --color-section-alt: #e6eaee;
 
-  --font-heading: 'Oswald', Arial Narrow, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
-  --font-body: 'Lato', system-ui, sans-serif;
+  --font-heading: 'Oswald', 'Oswald Fallback', Arial Narrow, sans-serif;
+  --font-serif: 'Source Serif 4', 'Source Serif 4 Fallback', Georgia, serif;
+  --font-body: 'Lato', 'Lato Fallback', system-ui, sans-serif;
 
   --header-height: 72px;
 }

@@ -1,9 +1,10 @@
 // Prerenders every route to static HTML after `vite build` so crawlers and
 // validators that don't execute JS (curl, most schema validators, Bing, etc.)
 // receive real title/meta/canonical/JSON-LD in the initial response instead
-// of an empty shell. The client still mounts via createRoot (not
-// hydrateRoot), so this output only needs to be valid HTML — it does not
-// need to match the client render exactly.
+// of an empty shell. The client hydrates this output with hydrateRoot (see
+// src/main.tsx), so it must match what AppRoutes renders client-side —
+// that's why this reuses the exact same route component instead of a
+// separate copy.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 // This file isn't part of the tsc project graph (see tsconfig.node.json),
@@ -12,83 +13,12 @@ import { resolve } from 'node:path'
 // automatic runtime configured in tsconfig.app.json.
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 
-import Layout from '../src/components/Layout'
-import Home from '../src/pages/Home'
-import ServicesOverview from '../src/pages/ServicesOverview'
-import Driveways from '../src/pages/services/Driveways'
-import Patios from '../src/pages/services/Patios'
-import PoolDecks from '../src/pages/services/PoolDecks'
-import RetainingWalls from '../src/pages/services/RetainingWalls'
-import FoundationsSlabs from '../src/pages/services/FoundationsSlabs'
-import CommercialConcrete from '../src/pages/services/CommercialConcrete'
-import About from '../src/pages/About'
-import Gallery from '../src/pages/Gallery'
-import Contact from '../src/pages/Contact'
-import BlogIndex from '../src/pages/BlogIndex'
-import BlogPost from '../src/pages/BlogPost'
-import ServiceAreasIndex from '../src/pages/ServiceAreasIndex'
-import Dallas from '../src/pages/service-areas/Dallas'
-import UptownDallas from '../src/pages/service-areas/UptownDallas'
-import HighlandPark from '../src/pages/service-areas/HighlandPark'
-import UniversityPark from '../src/pages/service-areas/UniversityPark'
-import PrestonHollow from '../src/pages/service-areas/PrestonHollow'
-import Lakewood from '../src/pages/service-areas/Lakewood'
-import OakLawn from '../src/pages/service-areas/OakLawn'
-import LakeHighlands from '../src/pages/service-areas/LakeHighlands'
-import OakCliff from '../src/pages/service-areas/OakCliff'
-import BishopArtsDistrict from '../src/pages/service-areas/BishopArtsDistrict'
-import ServiceLocationPage from '../src/pages/ServiceLocationPage'
-import NotFound from '../src/pages/NotFound'
-
+import AppRoutes from '../src/routes'
 import { services } from '../src/data/services'
 import { serviceAreas } from '../src/data/serviceAreas'
 import { blogPosts } from '../src/data/blogPosts'
-
-// Mirrors App.tsx's <Routes> exactly, but with static imports instead of
-// React.lazy — lazy/Suspense can't resolve synchronously inside
-// renderToStaticMarkup.
-function StaticRoutes() {
-  return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/concrete-services" element={<ServicesOverview />} />
-        <Route path="/driveways" element={<Driveways />} />
-        <Route path="/patios" element={<Patios />} />
-        <Route path="/pool-decks" element={<PoolDecks />} />
-        <Route path="/retaining-walls" element={<RetainingWalls />} />
-        <Route path="/foundations-slabs" element={<FoundationsSlabs />} />
-        <Route path="/commercial-concrete" element={<CommercialConcrete />} />
-
-        <Route path="/about-advanced-concrete-of-dallas" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/free-estimate-dallas" element={<Contact />} />
-
-        <Route path="/blog" element={<BlogIndex />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-
-        <Route path="/service-areas" element={<ServiceAreasIndex />} />
-        <Route path="/service-areas/dallas" element={<Dallas />} />
-        <Route path="/service-areas/uptown-dallas" element={<UptownDallas />} />
-        <Route path="/service-areas/highland-park" element={<HighlandPark />} />
-        <Route path="/service-areas/university-park" element={<UniversityPark />} />
-        <Route path="/service-areas/preston-hollow" element={<PrestonHollow />} />
-        <Route path="/service-areas/lakewood" element={<Lakewood />} />
-        <Route path="/service-areas/oak-lawn" element={<OakLawn />} />
-        <Route path="/service-areas/lake-highlands" element={<LakeHighlands />} />
-        <Route path="/service-areas/oak-cliff" element={<OakCliff />} />
-        <Route path="/service-areas/bishop-arts-district" element={<BishopArtsDistrict />} />
-
-        <Route path="/:serviceSlug/:locationSlug" element={<ServiceLocationPage />} />
-
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
-  )
-}
 
 // Same URL set as scripts/generate-sitemap.ts, built from the same data files.
 const routes: string[] = [
@@ -137,7 +67,7 @@ function renderRouteHtml(initialPath: string): string {
   const markup = renderToStaticMarkup(
     <div id="root">
       <MemoryRouter initialEntries={[initialPath]}>
-        <StaticRoutes />
+        <AppRoutes />
       </MemoryRouter>
     </div>
   )

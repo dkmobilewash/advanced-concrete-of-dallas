@@ -98,7 +98,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-acd flex flex-col items-center gap-2 py-6 text-center font-body text-xs text-white/40 md:flex-row md:justify-between md:text-left">
-          <p>
+          <p suppressHydrationWarning>
             &copy; {year} {BUSINESS.name}. All Rights Reserved.
           </p>
         </div>

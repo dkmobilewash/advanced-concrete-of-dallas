@@ -4,7 +4,6 @@ import PageHero from '@/components/PageHero'
 import { Phone, Mail, Clock, MapPin, ShieldCheck, ClipboardCheck, CheckCircle, AlertCircle } from '@/components/icons'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { BUSINESS } from '@/lib/business'
-import { supabase } from '@/lib/supabase'
 import { serviceAreas } from '@/data/serviceAreas'
 import { getBusinessSchema, getBreadcrumbSchema } from '@/lib/schema'
 
@@ -27,6 +26,7 @@ export default function Contact() {
     e.preventDefault()
     setStatus('submitting')
     try {
+      const { supabase } = await import('@/lib/supabase')
       const { error } = await supabase.from('contact_submissions').insert({
         name: form.name,
         phone: form.phone,
