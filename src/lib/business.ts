@@ -14,6 +14,9 @@ export const BUSINESS = {
   latitude: 32.766,
   longitude: -96.832,
   license: 'Licensed & Insured General Contractor — TX',
-  siteUrl: 'https://advancedconcretedallas.com',
+  // www is the actual production domain — Vercel's own domain config
+  // redirects the apex (advancedconcretedallas.com) to this with a 308,
+  // confirmed directly in the Vercel dashboard's Domains settings.
+  siteUrl: 'https://www.advancedconcretedallas.com',
   founded: 2009,
 } as const
