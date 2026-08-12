@@ -5,12 +5,6 @@
   "installCommand": "npm install",
   "routes": [
     {
-      "src": "/(.*)",
-      "has": [{ "type": "host", "value": "www.advancedconcretedallas.com" }],
-      "headers": { "Location": "https://advancedconcretedallas.com/$1" },
-      "status": 301
-    },
-    {
       "src": "/(.+)/$",
       "headers": { "Location": "/$1" },
       "status": 301
