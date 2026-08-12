@@ -51,13 +51,15 @@ const DYNAMIC_TAG_PATTERNS = [
   /<meta\s+property="og:description"[^>]*\/?>/i,
   /<meta\s+property="og:url"[^>]*\/?>/i,
 ]
-// Only stripped when a route supplies its own og:image (service pages) —
-// otherwise the template's default (site logo) stays as the fallback.
-const DEFAULT_OG_IMAGE_PATTERNS = [
+// Only stripped when a route supplies its own og:image/twitter:image
+// (service pages) — otherwise the template's defaults (site logo) stay as
+// the fallback.
+const DEFAULT_IMAGE_META_PATTERNS = [
   /<meta\s+property="og:image"[^>]*\/?>/i,
   /<meta\s+property="og:image:type"[^>]*\/?>/i,
   /<meta\s+property="og:image:width"[^>]*\/?>/i,
   /<meta\s+property="og:image:height"[^>]*\/?>/i,
+  /<meta\s+name="twitter:image"[^>]*\/?>/i,
 ]
 
 let baseHead = template
@@ -92,7 +94,7 @@ function renderRouteHtml(initialPath: string): string {
 
   let head = baseHead
   if (/property="og:image"/i.test(headTags)) {
-    for (const pattern of DEFAULT_OG_IMAGE_PATTERNS) head = head.replace(pattern, '')
+    for (const pattern of DEFAULT_IMAGE_META_PATTERNS) head = head.replace(pattern, '')
   }
   head = head.replace('</head>', `${headTags}</head>`)
 

@@ -40,7 +40,12 @@
 :root {
   --color-navy: #16233f;
   --color-navy-dark: #0e1826;
-  --color-silver: #7e8998;
+  /* Darkened from #7e8998 (~3.5:1 on white, fails WCAG AA for text) to meet
+     4.5:1 against both white and cream backgrounds, the only light
+     backgrounds this token is used as text/icon color against. Same hue,
+     just a richer shade — --color-silver-lt (used on dark backgrounds) is
+     unaffected. */
+  --color-silver: #626b77;
   --color-silver-lt: #a6afbc;
   --color-cream: #f1f3f6;
   --color-white: #ffffff;

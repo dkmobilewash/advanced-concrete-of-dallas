@@ -31,6 +31,9 @@ export default function PageMeta({ title, description, canonicalPath, ogImage, s
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
