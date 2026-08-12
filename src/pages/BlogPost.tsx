@@ -1,9 +1,10 @@
-import { useParams, Navigate } from 'react-router-dom'
+import { Link, useParams, Navigate } from 'react-router-dom'
 import PageMeta from '@/components/PageMeta'
 import PageHero from '@/components/PageHero'
 import CtaSection from '@/components/CtaSection'
 import { useFadeUp } from '@/hooks/useFadeUp'
 import { getBlogPostBySlug } from '@/data/blogPosts'
+import { getServiceBySlug } from '@/data/services'
 import { BUSINESS } from '@/lib/business'
 import { LOGO_IMAGE_OBJECT, LOGO_URL, businessRef, getBreadcrumbSchema } from '@/lib/schema'
 import type { BlogSection } from '@/types'
@@ -48,6 +49,8 @@ export default function BlogPost() {
 
   if (!post) return <Navigate to="/blog" replace />
 
+  const relatedServices = post.relatedServiceSlugs.map((slug) => getServiceBySlug(slug)).filter((s) => s !== undefined)
+
   const canonicalUrl = `${BUSINESS.siteUrl}/blog/${post.slug}`
 
   const schema = {
@@ -90,6 +93,25 @@ export default function BlogPost() {
           {post.content.map((section, i) => (
             <Section key={i} section={section} />
           ))}
+
+          {relatedServices.length > 0 && (
+            <div className="mt-10 border-t border-rule pt-8">
+              <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-wide text-navy">
+                Related Services
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {relatedServices.map((service) => (
+                  <Link
+                    key={service.slug}
+                    to={`/${service.slug}`}
+                    className="border border-rule bg-white px-4 py-2.5 font-heading text-sm font-semibold text-navy transition-colors hover:border-silver hover:text-silver"
+                  >
+                    {service.name} in Dallas
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

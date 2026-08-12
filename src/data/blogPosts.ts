@@ -9,6 +9,7 @@ export const blogPosts: BlogPost[] = [
     date: '2026-01-12',
     tag: 'Costs',
     readTime: '6 min read',
+    relatedServiceSlugs: ['driveways'],
     content: [
       {
         type: 'p',
@@ -52,6 +53,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-11-03',
     tag: 'Patios',
     readTime: '5 min read',
+    relatedServiceSlugs: ['patios'],
     content: [
       {
         type: 'p',
@@ -87,6 +89,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-09-18',
     tag: 'Foundations',
     readTime: '7 min read',
+    relatedServiceSlugs: ['foundations-slabs'],
     content: [
       {
         type: 'p',
@@ -125,6 +128,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-07-22',
     tag: 'Pool Decks',
     readTime: '5 min read',
+    relatedServiceSlugs: ['pool-decks'],
     content: [
       {
         type: 'p',
@@ -159,6 +163,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-06-05',
     tag: 'Process',
     readTime: '4 min read',
+    relatedServiceSlugs: ['driveways', 'patios', 'foundations-slabs'],
     content: [
       {
         type: 'p',
@@ -192,6 +197,7 @@ export const blogPosts: BlogPost[] = [
       'Not every crack means a full replacement, but some warning signs point to a driveway that’s past the point of patching. Here’s what to look for.',
     date: '2025-04-14',
     tag: 'Driveways',
+    relatedServiceSlugs: ['driveways'],
     readTime: '4 min read',
     content: [
       {
@@ -218,6 +224,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-02-27',
     tag: 'Foundations',
     readTime: '6 min read',
+    relatedServiceSlugs: ['foundations-slabs'],
     content: [
       { type: 'h2', text: 'How Conventional Slabs Work' },
       {

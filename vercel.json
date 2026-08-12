@@ -11,6 +11,11 @@
       "status": 301
     },
     {
+      "src": "/(.+)/$",
+      "headers": { "Location": "/$1" },
+      "status": 301
+    },
+    {
       "src": "/(.*)",
       "headers": { "Cache-Control": "public, max-age=0, must-revalidate" },
       "continue": true

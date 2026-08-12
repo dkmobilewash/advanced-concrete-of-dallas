@@ -57,6 +57,8 @@ export interface BlogPost {
   tag: string
   readTime: string
   content: BlogSection[]
+  /** Service slugs (see data/services.ts) this post is most relevant to. */
+  relatedServiceSlugs: string[]
 }
 
 export interface GalleryImage {

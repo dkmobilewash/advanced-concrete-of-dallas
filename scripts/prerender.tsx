@@ -12,7 +12,7 @@ import { resolve } from 'node:path'
 // needs `React` in scope explicitly — unlike src/**/*.tsx, which use the
 // automatic runtime configured in tsconfig.app.json.
 import React from 'react'
-import { renderToStaticMarkup } from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import { MemoryRouter } from 'react-router-dom'
 
 import AppRoutes from '../src/routes'
@@ -64,7 +64,14 @@ let baseHead = template
 for (const pattern of DYNAMIC_TAG_PATTERNS) baseHead = baseHead.replace(pattern, '')
 
 function renderRouteHtml(initialPath: string): string {
-  const markup = renderToStaticMarkup(
+  // renderToString (not renderToStaticMarkup) because the client hydrates
+  // this output with hydrateRoot — renderToString includes the internal
+  // markers (e.g. `<!-- -->` between adjacent text expressions) React's
+  // hydration matching relies on, which renderToStaticMarkup deliberately
+  // omits since it's meant for output that's never mounted. Verified this
+  // doesn't insert any marker between the hoisted head tags themselves, so
+  // the extraction logic below is unaffected.
+  const markup = renderToString(
     <div id="root">
       <MemoryRouter initialEntries={[initialPath]}>
         <AppRoutes />
@@ -74,10 +81,8 @@ function renderRouteHtml(initialPath: string): string {
 
   // <title>/<meta>/<link> are hoisted by React to the very front of the
   // output, ahead of everything else, however deeply they're nested in the
-  // tree — verified empirically, since renderToStaticMarkup's hoisting
-  // behavior isn't documented as explicitly as renderToString's. The
-  // `<div id="root">` marker (matching index.html's mount point) is not
-  // hoisted, so it reliably splits "head tags" from "app markup".
+  // tree. The `<div id="root">` marker (matching index.html's mount point)
+  // is not hoisted, so it reliably splits "head tags" from "app markup".
   const rootIdx = markup.indexOf('<div id="root">')
   if (rootIdx === -1) {
     throw new Error(`Prerender for ${initialPath} produced no #root div — got: ${markup.slice(0, 200)}`)

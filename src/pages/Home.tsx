@@ -286,6 +286,11 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <div className="fade-up mt-6 text-center">
+            <Link to="/service-areas" className="font-heading text-sm font-semibold uppercase tracking-wide text-silver hover:underline">
+              View All Service Areas &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 

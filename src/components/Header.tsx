@@ -92,12 +92,18 @@ export default function Header() {
             </NavDropdown>
 
             <NavDropdown label="Service Areas">
-              <div className="grid w-[28rem] grid-cols-2 gap-1">
-                {serviceAreas.map((a) => (
-                  <Link key={a.slug} to={`/service-areas/${a.slug}`} className="px-3 py-2 font-body text-sm text-mid hover:bg-cream hover:text-silver">
-                    {a.name}
-                  </Link>
-                ))}
+              <div className="flex w-[28rem] flex-col">
+                <Link to="/service-areas" className="px-3 py-2 font-heading text-sm font-semibold text-navy hover:bg-cream">
+                  All Service Areas
+                </Link>
+                <div className="my-1 border-t border-rule" />
+                <div className="grid grid-cols-2 gap-1">
+                  {serviceAreas.map((a) => (
+                    <Link key={a.slug} to={`/service-areas/${a.slug}`} className="px-3 py-2 font-body text-sm text-mid hover:bg-cream hover:text-silver">
+                      {a.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </NavDropdown>
 
