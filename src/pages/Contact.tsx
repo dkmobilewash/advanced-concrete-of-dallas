@@ -26,15 +26,12 @@ export default function Contact() {
     e.preventDefault()
     setStatus('submitting')
     try {
-      const { supabase } = await import('@/lib/supabase')
-      const { error } = await supabase.from('contact_submissions').insert({
-        name: form.name,
-        phone: form.phone,
-        email: form.email,
-        service: form.service,
-        description: form.description,
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       })
-      if (error) throw error
+      if (!response.ok) throw new Error('Request failed')
       setStatus('success')
       setForm({ name: '', phone: '', email: '', service: '', description: '' })
     } catch {
